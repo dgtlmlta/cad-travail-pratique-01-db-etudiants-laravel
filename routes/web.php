@@ -16,3 +16,4 @@ use App\Http\Controllers\EtudiantController;
 */
 
 Route::get('/', [EtudiantController::class, "index"]);
+Route::get('/etudiant/{id}', [EtudiantController::class, "show"]);

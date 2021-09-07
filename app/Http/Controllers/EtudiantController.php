@@ -47,9 +47,11 @@ class EtudiantController extends Controller
      * @param  \App\Models\Etudiant  $etudiant
      * @return \Illuminate\Http\Response
      */
-    public function show(Etudiant $etudiant)
+    public function show(Etudiant $etudiant, $id)
     {
-        //
+        return view("Etudiant.show", [
+            "etudiant" => Etudiant::find($id)
+        ]);
     }
 
     /**
