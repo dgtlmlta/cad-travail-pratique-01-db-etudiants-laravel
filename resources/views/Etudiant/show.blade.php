@@ -1,10 +1,15 @@
-<x-layouts.mainframe>
+<x-layouts.mainframe :pageTitle="$etudiant->nom">
 	<h1>{{ $etudiant->nom }}</h1>
 	
 	<dl>
 		<div>
 			<dt>Adresse</dt>
-			<dd>{{ $etudiant->adresse }}</dd>
+			<dd>
+				<address>					
+					{{ $etudiant->adresse }}<br>
+					{{ $etudiant->ville->nom }}
+				</address>
+			</dd>
 		</div>
 		<div>
 			<dt>Courriel</dt>
@@ -19,7 +24,8 @@
 			<dd>{{ $etudiant->ddn }}</dd>
 		</div>
 	</dl>
-	<span>{{ $etudiant->ville->nom }}</span>
+
+	<span></span>
 
 	<div class="mt-3">
 		<a class="btn btn-primary" href="/etudiant/{{ $etudiant->id }}/edit">Mettre à jour</a>
