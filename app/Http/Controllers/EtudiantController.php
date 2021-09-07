@@ -45,6 +45,7 @@ class EtudiantController extends Controller
      * Display the specified resource.
      *
      * @param  \App\Models\Etudiant  $etudiant
+     * @param  Integer  $id
      * @return \Illuminate\Http\Response
      */
     public function show(Etudiant $etudiant, $id)
