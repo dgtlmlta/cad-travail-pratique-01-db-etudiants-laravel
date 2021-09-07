@@ -20,7 +20,7 @@ class CreateEtudiantsTable extends Migration
             $table->string("adresse");
             $table->string("telephone");
             $table->string("courriel");
-            $table->date("ddn");
+            $table->dateTime("ddn");
             $table->foreignId("ville_id")->constrained();
             $table->timestamps();
         });
