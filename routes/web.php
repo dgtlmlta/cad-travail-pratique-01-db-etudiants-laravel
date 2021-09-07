@@ -15,5 +15,10 @@ use App\Http\Controllers\EtudiantController;
 |
 */
 
-Route::get('/', [EtudiantController::class, "index"]);
-Route::get('/etudiant/{id}', [EtudiantController::class, "show"]);
+// Page d'accueil, liste des étudiants
+Route::get('/', [EtudiantController::class, "index"])->name("etudiants.index");
+Route::get('/etudiants', [EtudiantController::class, "index"])->name("etudiants.index");
+
+
+Route::get('/etudiants/{id}', [EtudiantController::class, "show"])->name("etudiants.show");
+Route::delete('/etudiants/{id}', [EtudiantController::class, "destroy"])->name("etudiants.destroy");

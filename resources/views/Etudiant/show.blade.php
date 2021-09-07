@@ -4,9 +4,10 @@
 
 	<div>
 		<a class="btn btn-primary" href="/etudiant/{{ $etudiant->id }}/edit">Mettre à jour</a>
-		<form action="{{ route('etudiants.destroy', $etudiant->id) }}" method="POST">
+		<form action="{{ route("etudiant.destroy", $etudiant->id) }}" method="POST">
+			@csrf
 			@method('delete')
-			<a class="btn btn-primary" href="/etudiant/{{ $etudiant->id }}">Supprimer</a>
+			<button class="btn btn-primary" href="/etudiant/{{ $etudiant->id }}" type="submit">Supprimer</button>
 		</form>
 	</div>
 </x-layouts.mainframe>
