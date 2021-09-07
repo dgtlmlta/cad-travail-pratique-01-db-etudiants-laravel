@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<title>Bienvenue :: Entrailles-les-Oies</title>
+	<title>{{ $pageTitle ?? "Test" }} :: Entrailles-les-Oies</title>
 	<meta name="description" content="Site web de l'école Entrailles-les-Oies de Saint-Jean-de-Bosco">
 
 	<!-- Fonts -->
@@ -17,5 +17,6 @@
 </head>
 
 <body>
+    {{ $slot }}
 </body>
 </html>
