@@ -16,7 +16,9 @@
 	<script type="text/javascript" src="/js/app.js"></script>
 </head>
 
-<body>
-    {{ $slot }}
+<body class="m-4">
+    <main class="">
+        {{ $slot }}
+    </main>    
 </body>
 </html>

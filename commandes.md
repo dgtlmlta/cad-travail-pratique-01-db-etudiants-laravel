@@ -25,4 +25,4 @@ php artisan make:controller EtudiantController -m Etudiant
 php artisan ui bootstrap
 npm install && npm run dev
 
-php artisan make:component Layouts\\Mainframe
+php artisan make:component layouts\\Mainframe
