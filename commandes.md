@@ -21,5 +21,9 @@ php artisan tinker
 8. php artisan make:controller VilleController
 php artisan make:controller EtudiantController
 
-9. php artisan make:component Layouts\Mainframe
-php artisan make:component Etudiant\EtudiantListe
+9. composer require laravel/ui
+php artisan ui bootstrap
+npm install && npm run dev
+
+php artisan make:component Layouts\\Mainframe
+php artisan make:component Etudiant\\EtudiantListe
