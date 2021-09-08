@@ -19,6 +19,7 @@
 <body class="m-4">
 	<nav>
 		<a class="btn btn-outline-primary" href="/">Retour à l'accueil</a>
+		<a class="btn btn-outline-primary" href="{{ route("etudiants.create") }}">Ajouter un étudiant</a>
 	</nav>
 
     <main class="mt-5">

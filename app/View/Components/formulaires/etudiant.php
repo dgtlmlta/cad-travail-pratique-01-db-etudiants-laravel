@@ -6,6 +6,9 @@ use Illuminate\View\Component;
 
 class etudiant extends Component
 {
+    public $action;
+    public $villes;
+
     /**
      * Create a new component instance.
      *
@@ -14,6 +17,7 @@ class etudiant extends Component
     public function __construct()
     {
         //
+        
     }
 
     /**

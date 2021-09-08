@@ -30,7 +30,7 @@ class EtudiantController extends Controller
     {
         //
         return view("Etudiants.create", [
-            "villes" => Ville::all()
+            "action" => "ajouter"
         ]);
     }
 
