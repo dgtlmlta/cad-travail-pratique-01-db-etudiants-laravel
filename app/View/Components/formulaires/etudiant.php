@@ -2,6 +2,7 @@
 
 namespace App\View\Components\formulaires;
 
+use App\Models\Ville;
 use Illuminate\View\Component;
 
 class etudiant extends Component
@@ -14,10 +15,11 @@ class etudiant extends Component
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(String $action)
     {
         //
-        
+        $this->villes = Ville::all();
+        $this->action = $this->getActionRoute($action);
     }
 
     /**
@@ -28,5 +30,14 @@ class etudiant extends Component
     public function render()
     {
         return view('components.formulaires.etudiant');
+    }
+
+
+    private function getActionRoute($action) {
+        $actionsMapping = [
+            "ajouter" => route("etudiants.store")
+        ];
+
+        return $actionsMapping[$action];
     }
 }

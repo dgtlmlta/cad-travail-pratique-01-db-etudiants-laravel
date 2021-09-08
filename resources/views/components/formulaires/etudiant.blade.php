@@ -1,32 +1,32 @@
 <form action="{{ $action }}" method="POST">
-    <div>
+    <div class="form-group">
         <label for="inputNom">Nom :</label>
-        <input type="text" id="inputNom" name="nom">
+        <input class="form-control" type="text" id="inputNom" name="nom">
     </div>
 
-    <div>
+    <div class="form-group">
         <label for="inputAdresse">Adresse :</label>
-        <textarea id="inputAdresse" name="adresse"></textarea>
+        <textarea class="form-control" id="inputAdresse" name="adresse"></textarea>
     </div>
 
-    <div>
+    <div class="form-group">
         <label for="inputCourriel">Courriel :</label>
-        <input type="email" id="inputCourriel" name="courriel">
+        <input class="form-control" type="email" id="inputCourriel" name="courriel">
     </div>
     
-    <div>
+    <div class="form-group">
         <label for="inputTelephone"></label>
-        <input type="phone" id="inputTelephone" name="telephone">
+        <input class="form-control" type="phone" id="inputTelephone" name="telephone">
     </div>
 
-    <div>
-        <label for="inputDdn"></label>
-        <input type="date" id="inputDdn" name="ddn">
+    <div class="form-group">
+        <label for="inputDdn">Date de naissance :</label>
+        <input class="form-control" type="date" id="inputDdn" name="ddn">
     </div>
 
-    <div>
+    <div class="form-group">
         <label for="selectVille"></label>
-        <select id="selectVille" name="ville">
+        <select class="form-control" id="selectVille" name="ville">
             @foreach ($villes as $ville)
             <option value="{{ $ville->id }}">{{ $ville->nom }}</option>
             @endforeach
