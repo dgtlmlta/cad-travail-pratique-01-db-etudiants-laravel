@@ -17,7 +17,11 @@
 </head>
 
 <body class="m-4">
-    <main class="">
+	<nav>
+		<a class="btn btn-outline-primary" href="/">Retour à l'accueil</a>
+	</nav>
+
+    <main class="mt-5">
         {{ $slot }}
     </main>    
 </body>
