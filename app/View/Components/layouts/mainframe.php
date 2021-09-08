@@ -4,7 +4,7 @@ namespace App\View\Components;
 
 use Illuminate\View\Component;
 
-class Layoutsmainframe extends Component
+class mainframe extends Component
 {
     /**
      * Create a new component instance.
@@ -23,6 +23,6 @@ class Layoutsmainframe extends Component
      */
     public function render()
     {
-        return view('components.layoutsmainframe');
+        return view('components.layouts.mainframe');
     }
 }

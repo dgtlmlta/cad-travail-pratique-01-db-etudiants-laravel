@@ -1,4 +1,4 @@
-<form action="{{ $action }}">
+<form action="{{ $action }}" method="POST">
     <div>
         <label for="inputNom">Nom :</label>
         <input type="text" id="inputNom" name="nom">
@@ -27,7 +27,9 @@
     <div>
         <label for="selectVille"></label>
         <select id="selectVille" name="ville">
-            
+            @foreach ($villes as $ville)
+            <option value="{{ $ville->id }}">{{ $ville->nom }}</option>
+            @endforeach
         </select>
     </div>
 </form>
