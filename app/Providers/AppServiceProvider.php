@@ -2,9 +2,9 @@
 
 namespace App\Providers;
 
+use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\View;
-use App\Models\Ville;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -25,6 +25,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //    
+        // Partager le nom de la route à toutes les vues
+        View::share("routeName", Route::currentRouteName());
     }
 }
