@@ -17,7 +17,7 @@ class EtudiantController extends Controller
     {
         //
         return view("Etudiants.index", [
-            "etudiants" => Etudiant::all()
+            "etudiants" => Etudiant::paginate(12)
         ]);
     }
 
@@ -29,9 +29,7 @@ class EtudiantController extends Controller
     public function create()
     {
         //
-        return view("Etudiants.create", [
-            "action" => "ajouter"
-        ]);
+        return view("Etudiants.create");
     }
 
     /**

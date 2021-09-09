@@ -6,14 +6,16 @@ use Illuminate\View\Component;
 
 class mainframe extends Component
 {
+    public $pageTitle;
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(string $pageTitle)
     {
         //
+        $this->pageTitle = $pageTitle;
     }
 
     /**

@@ -1,4 +1,7 @@
 <form action="{{ $action }}" method="POST">
+    @csrf
+    @method($method)
+    
     <div class="form-group">
         <label for="inputNom">Nom :</label>
         <input class="form-control" type="text" id="inputNom" name="nom">

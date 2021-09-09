@@ -5,4 +5,6 @@
 		<li><a href="/etudiants/{{ $etudiant->id }}">{{ $etudiant->nom }} de {{ $etudiant->ville->nom }}</li>			
 		@endforeach
 	</ul>
+
+	{{ $etudiants->links("pagination::bootstrap-4") }}
 </x-layouts.mainframe>

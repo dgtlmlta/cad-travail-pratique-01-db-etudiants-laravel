@@ -1,4 +1,5 @@
-<x-layouts.mainframe pageTitle="Ajout d'un nouvel étudiant">
-	<x-formulaires.etudiant :action="$action">
+<x-layouts.mainframe pageTitle="Formulaire d'ajout d'un nouvel étudiant">
+	<h1>Ajouter un étudiant</h1>
+	<x-formulaires.etudiant>
 	</x-formulaires.etudiant>
 </x-layouts.mainframe>

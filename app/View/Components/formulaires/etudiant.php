@@ -3,23 +3,27 @@
 namespace App\View\Components\formulaires;
 
 use App\Models\Ville;
+use Illuminate\Support\Facades\Route;
 use Illuminate\View\Component;
 
 class etudiant extends Component
 {
     public $action;
     public $villes;
+    public $routeName;
+    public $method;
 
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct(String $action)
+    public function __construct()
     {
         //
+        $this->routeName = Route::currentRouteName();
         $this->villes = Ville::all();
-        $this->action = $this->getActionRoute($action);
+        $this->action = $this->getActionRoute();
     }
 
     /**
@@ -32,12 +36,33 @@ class etudiant extends Component
         return view('components.formulaires.etudiant');
     }
 
-
-    private function getActionRoute($action) {
+    /**
+     * 
+     * Retourne l'action à effectuer par le formulaire
+     * 
+     * @return string
+     * 
+     */
+    private function getActionRoute() {
         $actionsMapping = [
-            "ajouter" => route("etudiants.store")
+            "etudiants.create" => route("etudiants.store")
         ];
 
-        return $actionsMapping[$action];
+        return $actionsMapping[$this->routeName];
+    }
+
+    /**
+     * 
+     * Retourne les différents textes dynamiques de la page
+     * 
+     * @return array
+     */
+    public function method() {
+        $methodsMapping = [
+            "etudiants.create" => "POST",
+            "etudiants.update" => "PUT",
+        ];
+
+        return $methodsMapping[$this->routeName];
     }
 }
