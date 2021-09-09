@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Etudiant;
 use App\Models\Ville;
 use Illuminate\Http\Request;
+use Illuminate\Routing\Route;
 
 class EtudiantController extends Controller
 {
@@ -40,7 +41,20 @@ class EtudiantController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $etudiant = new Etudiant();
+
+        $etudiant->nom = $request->nom;
+        $etudiant->adresse = $request->adresse;
+        $etudiant->ville_id = $request->ville_id;
+        $etudiant->courriel = $request->courriel;
+        $etudiant->telephone = $request->telephone;
+        $etudiant->ddn = $request->ddn;
+
+        if(!$etudiant->save()) {
+            exit();
+        };
+
+        return redirect("/etudiants/{$etudiant->id}");
     }
 
     /**

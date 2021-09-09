@@ -14,7 +14,7 @@
 
     <div class="form-group">
         <label for="selectVille">Ville :</label>
-        <select class="form-control" id="selectVille" name="ville">
+        <select class="form-control" id="selectVille" name="ville_id">
             @foreach ($villes as $ville)
             <option value="{{ $ville->id }}">{{ $ville->nom }}</option>
             @endforeach
