@@ -25,7 +25,7 @@ Route::get('/etudiants/ajout', [EtudiantController::class, "create"])->name("etu
 Route::post('/etudiants/ajout', [EtudiantController::class, "store"])->name("etudiants.store");
 
 // Afficher un étudiant par son id
-Route::get('/etudiants/{id}', [EtudiantController::class, "show"])->name("etudiants.show");
+Route::get('/etudiants/{etudiant}', [EtudiantController::class, "show"])->name("etudiants.show");
 
 // Action de supprimer un étudiant par son id
-Route::delete('/etudiants/{id}', [EtudiantController::class, "destroy"])->name("etudiants.destroy");
+Route::delete('/etudiants/{etudiant}', [EtudiantController::class, "destroy"])->name("etudiants.destroy");

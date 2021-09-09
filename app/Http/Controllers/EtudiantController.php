@@ -64,10 +64,10 @@ class EtudiantController extends Controller
      * @param  Integer  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Etudiant $etudiant, $id)
+    public function show(Etudiant $etudiant)
     {
         return view("Etudiants.show", [
-            "etudiant" => Etudiant::find($id)
+            "etudiant" => $etudiant
         ]);
     }
 
