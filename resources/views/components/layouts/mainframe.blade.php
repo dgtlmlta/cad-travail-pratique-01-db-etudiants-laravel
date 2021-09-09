@@ -17,7 +17,7 @@
 </head>
 
 <body class="m-4">
-	<nav>
+	<nav class="container">
 		<a class="btn btn-outline-primary" href="/">Retour à l'accueil</a>
 		
 		@if(Route::is("etudiants.index"))
@@ -26,7 +26,9 @@
 	</nav>
 
     <main class="container mt-5">
-        {{ $slot }}
+        <div class="col-8">
+		{{ $slot }}
+		</div>
     </main>    
 </body>
 </html>

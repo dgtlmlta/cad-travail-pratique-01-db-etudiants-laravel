@@ -13,12 +13,21 @@
     </div>
 
     <div class="form-group">
+        <label for="selectVille">Ville :</label>
+        <select class="form-control" id="selectVille" name="ville">
+            @foreach ($villes as $ville)
+            <option value="{{ $ville->id }}">{{ $ville->nom }}</option>
+            @endforeach
+        </select>
+    </div>
+
+    <div class="form-group">
         <label for="inputCourriel">Courriel :</label>
         <input class="form-control" type="email" id="inputCourriel" name="courriel">
     </div>
     
     <div class="form-group">
-        <label for="inputTelephone"></label>
+        <label for="inputTelephone">Téléphone :</label>
         <input class="form-control" type="phone" id="inputTelephone" name="telephone">
     </div>
 
@@ -28,11 +37,6 @@
     </div>
 
     <div class="form-group">
-        <label for="selectVille"></label>
-        <select class="form-control" id="selectVille" name="ville">
-            @foreach ($villes as $ville)
-            <option value="{{ $ville->id }}">{{ $ville->nom }}</option>
-            @endforeach
-        </select>
+        <button class="btn btn-primary" type="submit">Soumettre</button>
     </div>
 </form>
