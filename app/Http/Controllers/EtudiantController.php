@@ -51,7 +51,7 @@ class EtudiantController extends Controller
         $etudiant->ddn = $request->ddn;
 
         if(!$etudiant->save()) {
-            exit();
+            return redirect("/");
         };
 
         return redirect("/etudiants/{$etudiant->id}");
@@ -103,5 +103,10 @@ class EtudiantController extends Controller
     public function destroy(Etudiant $etudiant)
     {
         //
+        if(!$etudiant->delete()) {
+            return redirect("/etudiants/{$etudiant->id}");
+        };
+
+        return redirect("/");
     }
 }
