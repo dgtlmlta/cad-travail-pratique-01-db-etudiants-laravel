@@ -19,10 +19,18 @@ use App\Http\Controllers\EtudiantController;
 Route::get('/', [EtudiantController::class, "index"])->name("etudiants.index");
 Route::get('/etudiants', [EtudiantController::class, "index"])->name("etudiants.index");
 
+
 // Formulaire d'ajout d'un étudiant
 Route::get('/etudiants/ajout', [EtudiantController::class, "create"])->name("etudiants.create");
 // Action d'ajout à la base de données
 Route::post('/etudiants/ajout', [EtudiantController::class, "store"])->name("etudiants.store");
+
+
+// Formulaire de mise à jour d'un étudiant
+Route::get('/etudiants/{etudiant}/modifier', [EtudiantController::class, "edit"])->name("etudiants.edit");
+// Action d'ajout à la base de données
+Route::put('/etudiants/{etudiant}', [EtudiantController::class, "update"])->name("etudiants.update");
+
 
 // Afficher un étudiant par son id
 Route::get('/etudiants/{etudiant}', [EtudiantController::class, "show"])->name("etudiants.show");
