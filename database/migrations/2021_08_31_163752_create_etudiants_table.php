@@ -4,6 +4,7 @@ use App\Models\Ville;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Validation\Rules\Unique;
 
 class CreateEtudiantsTable extends Migration
 {
@@ -19,7 +20,7 @@ class CreateEtudiantsTable extends Migration
             $table->string("nom");
             $table->string("adresse");
             $table->string("telephone");
-            $table->string("courriel");
+            $table->string("courriel")->unique();
             $table->dateTime("ddn");
             $table->foreignId("ville_id")->constrained();
             $table->timestamps();
