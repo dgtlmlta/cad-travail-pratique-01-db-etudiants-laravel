@@ -80,6 +80,9 @@ class EtudiantController extends Controller
     public function edit(Etudiant $etudiant)
     {
         //
+        return view("Etudiants.edit", [
+            "etudiant" => $etudiant
+        ]);
     }
 
     /**

@@ -4598,14 +4598,13 @@ input[type=button].btn-block {
   margin-left: -1px;
   line-height: 1.25;
   color: #0b2b46;
-  background-color: #fff;
   border: 1px solid #dee2e6;
 }
 .page-link:hover {
   z-index: 2;
   color: #010204;
   text-decoration: none;
-  background-color: #e9ecef;
+  background-color: #f79055;
   border-color: #dee2e6;
 }
 .page-link:focus {
