@@ -12,11 +12,10 @@ php artisan make:migration create_villes_table
 php artisan migrate
 
 5. php artisan make:factory VilleFactory
-php artisan tinker
->>>> App\Models\Ville::factory()->count(15)->create();
+php artisan make:seeder VilleSeeder
 
 6. php artisan make:factory EtudiantFactory
->>>> App\Models\Etudiant::factory()->count(100)->create();
+php artisan make:seeder EtudiantSeeder
 
 8. php artisan make:controller VilleController -m Ville
 php artisan make:controller EtudiantController -m Etudiant
