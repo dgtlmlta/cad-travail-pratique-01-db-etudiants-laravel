@@ -95,6 +95,19 @@ class EtudiantController extends Controller
     public function update(Request $request, Etudiant $etudiant)
     {
         //
+        $etudiant->nom = $request->nom;
+        $etudiant->adresse = $request->adresse;
+        $etudiant->ville_id = $request->ville_id;
+        $etudiant->courriel = $request->courriel;
+        $etudiant->telephone = $request->telephone;
+        $etudiant->ddn = $request->ddn;
+
+        if(!$etudiant->save()) {
+            return redirect("/");
+        };
+
+        return redirect("/etudiants/{$etudiant->id}");
+
     }
 
     /**

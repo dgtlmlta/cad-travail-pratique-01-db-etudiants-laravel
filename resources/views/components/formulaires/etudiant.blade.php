@@ -25,7 +25,7 @@
             @foreach ($villes as $ville)
             <option
                 value="{{ $ville->id }}"
-                @if($etudiant->ville_id == $ville->id) selected @endif
+                @if($etudiant && $etudiant->ville_id == $ville->id) selected @endif
             >
                 {{ $ville->nom }}
             </option>

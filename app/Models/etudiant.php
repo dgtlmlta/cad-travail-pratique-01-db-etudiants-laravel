@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Config;
 
 class Etudiant extends Model
 {
@@ -21,7 +22,8 @@ class Etudiant extends Model
     public function getFormattedDdnAttribute() {
         
         $ddn = $this->castAttribute("ddn", $this->ddn);
+        $userLocale = Config::get("app.locale");
 
-        return $ddn->locale("fr_CA")->isoFormat("LL");
+        return $ddn->locale($userLocale)->isoFormat("LL");
     }
 }
