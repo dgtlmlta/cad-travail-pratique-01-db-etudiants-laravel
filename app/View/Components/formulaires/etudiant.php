@@ -45,7 +45,7 @@ class etudiant extends Component
     public function actionRoute() {
         $actionsMapping = [
             "etudiants.create" => route("etudiants.store"),
-            "etudiants.edit" => route("etudiants.update")
+            "etudiants.edit" => route("etudiants.update", $this->etudiant->id ?? 0)
         ];
 
         return $actionsMapping[$this->routeName];

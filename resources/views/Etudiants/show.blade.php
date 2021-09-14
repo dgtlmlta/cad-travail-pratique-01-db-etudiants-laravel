@@ -28,11 +28,11 @@
 	<span></span>
 
 	<div class="mt-3">
-		<a class="btn btn-primary" href="/etudiant/{{ $etudiant->id }}/modifier">Mettre à jour</a>
+		<a class="btn btn-primary" href="/etudiants/{{ $etudiant->id }}/modifier">Mettre à jour</a>
 		<form action="{{ route("etudiants.destroy", $etudiant->id) }}" method="POST" class="mt-3">
 			@csrf
 			@method('delete')
-			<button class="btn btn-primary" href="/etudiant/{{ $etudiant->id }}" type="submit">Supprimer</button>
+			<button class="btn btn-primary" href="/etudiants/{{ $etudiant->id }}" type="submit">Supprimer</button>
 		</form>
 	</div>
 </x-layouts.mainframe>

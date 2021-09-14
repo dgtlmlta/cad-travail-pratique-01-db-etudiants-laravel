@@ -17,7 +17,7 @@ class EtudiantController extends Controller
     public function index()
     {
         //
-        return view("Etudiants.index", [
+        return view("etudiants.index", [
             "etudiants" => Etudiant::paginate(12)
         ]);
     }
@@ -30,7 +30,7 @@ class EtudiantController extends Controller
     public function create()
     {
         //
-        return view("Etudiants.create");
+        return view("etudiants.create");
     }
 
     /**
@@ -66,7 +66,7 @@ class EtudiantController extends Controller
      */
     public function show(Etudiant $etudiant)
     {
-        return view("Etudiants.show", [
+        return view("etudiants.show", [
             "etudiant" => $etudiant
         ]);
     }
@@ -80,7 +80,7 @@ class EtudiantController extends Controller
     public function edit(Etudiant $etudiant)
     {
         //
-        return view("Etudiants.edit", [
+        return view("etudiants.edit", [
             "etudiant" => $etudiant
         ]);
     }
