@@ -23,7 +23,6 @@ class etudiant extends Component
         //
         $this->routeName = Route::currentRouteName();
         $this->villes = Ville::all();
-        $this->action = $this->getActionRoute();
     }
 
     /**
@@ -43,7 +42,7 @@ class etudiant extends Component
      * @return string
      * 
      */
-    private function getActionRoute() {
+    private function actionRoute() {
         $actionsMapping = [
             "etudiants.create" => route("etudiants.store"),
             "etudiants.edit" => route("etudiants.update")
