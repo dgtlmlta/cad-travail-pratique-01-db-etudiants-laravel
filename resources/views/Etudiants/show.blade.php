@@ -21,7 +21,7 @@
 		</div>
 		<div>
 			<dt>Date de naissance</dt>
-			<dd>{{ $etudiant->ddn }}</dd>
+			<dd>{{ $etudiant->formatted_ddn }}</dd>
 		</div>
 	</dl>
 

@@ -62,7 +62,7 @@
             type="date"
             id="inputDdn"
             name="ddn"
-            @if($etudiant) value="{{ $etudiant->ddn }}"@endif
+            @if($etudiant) value="{{ $etudiant->ddn->format("Y-m-d") }}"@endif
         >
     </div>
 

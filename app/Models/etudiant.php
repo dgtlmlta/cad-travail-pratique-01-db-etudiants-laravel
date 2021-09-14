@@ -18,9 +18,9 @@ class Etudiant extends Model
         return $this->belongsTo(Ville::class);
     }
 
-    public function getDdnAttribute($dateDeNaissance) {
+    public function getFormattedDdnAttribute() {
         
-        $ddn = $this->castAttribute("ddn", $dateDeNaissance);
+        $ddn = $this->castAttribute("ddn", $this->ddn);
 
         return $ddn->locale("fr_CA")->isoFormat("LL");
     }
