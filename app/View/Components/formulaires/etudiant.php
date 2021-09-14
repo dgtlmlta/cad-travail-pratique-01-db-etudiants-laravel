@@ -42,7 +42,7 @@ class etudiant extends Component
      * @return string
      * 
      */
-    private function actionRoute() {
+    public function actionRoute() {
         $actionsMapping = [
             "etudiants.create" => route("etudiants.store"),
             "etudiants.edit" => route("etudiants.update")
