@@ -1,10 +1,10 @@
 <?php
 
-namespace App\View\Components\layouts;
+namespace App\View\Components\Layouts;
 
 use Illuminate\View\Component;
 
-class mainframe extends Component
+class Mainframe extends Component
 {
     public $pageTitle;
     /**
