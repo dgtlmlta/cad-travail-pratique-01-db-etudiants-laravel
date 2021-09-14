@@ -15,7 +15,7 @@
 
     <div class="form-group">
         <label for="inputAdresse">Adresse :</label>
-        <textarea class="form-control" id="inputAdresse" name="adresse">@if($etudiant){{ $etudiant->adresse }}"@endif
+        <textarea class="form-control" id="inputAdresse" name="adresse">@if($etudiant){{ $etudiant->adresse }}@endif
         </textarea>
     </div>
 
