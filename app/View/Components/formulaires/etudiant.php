@@ -12,17 +12,19 @@ class etudiant extends Component
     public $villes;
     public $routeName;
     public $method;
+    public $etudiant;
 
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($etudiant = null)
     {
         //
         $this->routeName = Route::currentRouteName();
         $this->villes = Ville::all();
+        $this->etudiant = $etudiant;
     }
 
     /**
@@ -45,7 +47,9 @@ class etudiant extends Component
     public function actionRoute() {
         $actionsMapping = [
             "etudiants.create" => route("etudiants.store"),
-            "etudiants.edit" => route("etudiants.update", $this->etudiant->id ?? 0)
+            "etudiants.edit" => route("etudiants.update", [
+                "etudiant" => $this->etudiant->id ?? 0
+            ])
         ];
 
         return $actionsMapping[$this->routeName];
