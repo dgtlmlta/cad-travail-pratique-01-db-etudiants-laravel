@@ -17,6 +17,8 @@ php artisan make:seeder VilleSeeder
 6. php artisan make:factory EtudiantFactory
 php artisan make:seeder EtudiantSeeder
 
+5 et 6. php artisan migrate:fresh --seed
+
 8. php artisan make:controller VilleController -m Ville
 php artisan make:controller EtudiantController -m Etudiant
 

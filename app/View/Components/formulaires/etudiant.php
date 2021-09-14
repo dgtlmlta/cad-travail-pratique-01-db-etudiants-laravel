@@ -45,7 +45,8 @@ class etudiant extends Component
      */
     private function getActionRoute() {
         $actionsMapping = [
-            "etudiants.create" => route("etudiants.store")
+            "etudiants.create" => route("etudiants.store"),
+            "etudiants.edit" => route("etudiants.update")
         ];
 
         return $actionsMapping[$this->routeName];
@@ -60,7 +61,7 @@ class etudiant extends Component
     public function method() {
         $methodsMapping = [
             "etudiants.create" => "POST",
-            "etudiants.update" => "PUT",
+            "etudiants.edit" => "PUT",
         ];
 
         return $methodsMapping[$this->routeName];
