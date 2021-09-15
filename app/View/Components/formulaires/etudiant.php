@@ -1,12 +1,13 @@
 <?php
 
-namespace App\View\Components\formulaires;
+namespace App\View\Components\Formulaires;
 
 use App\Models\Ville;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Route;
 use Illuminate\View\Component;
 
-class etudiant extends Component
+class Etudiant extends Component
 {
     public $action;
     public $villes;
@@ -51,6 +52,8 @@ class etudiant extends Component
                 "etudiant" => $this->etudiant->id ?? 0
             ])
         ];
+
+        dd($this->routeName);
 
         return $actionsMapping[$this->routeName];
     }

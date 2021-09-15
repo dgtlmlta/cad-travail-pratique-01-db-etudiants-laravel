@@ -17,7 +17,7 @@ use App\Http\Controllers\EtudiantController;
 
 // Page d'accueil, liste des étudiants
 Route::get('/', [EtudiantController::class, "index"])->name("etudiants.index");
-Route::get('/etudiants', [EtudiantController::class, "index"])->name("etudiants.index");
+Route::get('/etudiants', [EtudiantController::class, "index"]);
 
 
 // Formulaire d'ajout d'un étudiant
