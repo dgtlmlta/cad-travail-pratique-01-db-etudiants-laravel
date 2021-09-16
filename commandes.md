@@ -1,3 +1,7 @@
+# Adresse du site
+
+https://entrailles-les-oies.digitalmilitia.net
+
 # Commandes utilisées
 
 1. laravel new Maisonneuve2095538
@@ -21,6 +25,8 @@ php artisan tinker
 
 6. php artisan make:factory EtudiantFactory
 php artisan make:seeder EtudiantSeeder pour automatiser la chose lors de la création des tables
+
+ou
 
 php artisan tinker
 >>>> App\Models\Etudiant::factory()->count(15)->create()
