@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EtudiantController;
-
+use App\Http\Controllers\LocaleController;
 
 /*
 |--------------------------------------------------------------------------
@@ -43,3 +43,6 @@ Route::get('/login', [CustomAuthController::class, 'index'])->name("auth.login")
 Route::get('/register', [CustomAuthController::class, 'create'])->name("auth.register");
 Route::post('/custom-register', [CustomAuthController::class, 'store'])->name('register.custom');
 Route::post('/custom-login', [CustomAuthController::class, 'login'])->name('login.custom');
+
+// Choix de langue
+Route::get('/locale/{lang}', [LocaleController::class, "setLocale"]);
