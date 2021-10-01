@@ -37,3 +37,9 @@ Route::get('/etudiants/{etudiant}', [EtudiantController::class, "show"])->name("
 
 // Action de supprimer un étudiant par son id
 Route::delete('/etudiants/{etudiant}', [EtudiantController::class, "destroy"])->name("etudiants.destroy");
+
+// Authentification et enregitrement
+Route::get('/login', [CustomAuthController::class, 'index'])->name("auth.login");
+Route::get('/register', [CustomAuthController::class, 'create'])->name("auth.register");
+Route::post('/custom-register', [CustomAuthController::class, 'store'])->name('register.custom');
+Route::post('/custom-login', [CustomAuthController::class, 'login'])->name('login.custom');
