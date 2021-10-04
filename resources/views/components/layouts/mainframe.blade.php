@@ -25,7 +25,9 @@
 
             <a class="nav-item nav-link @if(Route::is("etudiants.index"))active @endif" href="/etudiants">Nos étudiants</a>
 
-            <a class="nav-item nav-link" href="/forum">Le forum</a>
+            <a class="nav-item nav-link @if(Route::is("forum.index"))active @endif" href="/forum">Le forum</a>
+
+            <a class="nav-item nav-link @if(Route::is("auth.login"))active @endif" href="/authentification">S'authentifier</a>
 
             <div class="nav-item dropdown dropdown-locale">
                 <button
@@ -50,11 +52,7 @@
                   </div>
             </div>
         </nav>
-
-
     </header>
-
-
 
     <main class="container mt-5">
         <div class="col-8">
