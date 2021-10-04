@@ -1,4 +1,4 @@
 <x-layouts.mainframe pageTitle="Bienvenue !">
-    <h1>Bienvenue à l'école Entrailles-les-oies</h1>
-    <span>champions nationaux de Génie en Herbes</span>
+    <h1>{{ __("welcome.titre") }}</h1>
+    <span>{!! __("welcome.taglineTitre") !!}</span>
 </x-layouts.mainframe>
