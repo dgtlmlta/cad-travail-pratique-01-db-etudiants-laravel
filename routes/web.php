@@ -17,9 +17,7 @@ use App\Http\Controllers\LocaleController;
 
 // Page d'accueil, liste des étudiants
 Route::get('/', function() {
-    return view("bienvenue", [
-        "pageTitle" => "Bienvenue"
-    ]);
+    return view("bienvenue");
 })->name("index");
 
 Route::get('/etudiants', [EtudiantController::class, "index"])->name("etudiants.index");

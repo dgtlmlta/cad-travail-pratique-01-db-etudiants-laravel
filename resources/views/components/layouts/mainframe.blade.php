@@ -20,7 +20,7 @@
 
 <body class="m-4">
 	<header class="container">
-        <x-navbar></x-navbar>
+        <x-navigation.navbar test="test"></x-navigation.navbar>
         {{-- <nav class="nav nav-pills nav-fill">
             <a class="nav-item nav-link @if(Route::is("index"))active @endif" href="/">Accueil</a>
 

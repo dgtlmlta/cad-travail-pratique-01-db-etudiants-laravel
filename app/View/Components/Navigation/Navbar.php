@@ -1,13 +1,16 @@
 <?php
 
-namespace App\View\Components;
+namespace App\View\Components\Navigation;
 
 use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\Config;
 use Illuminate\View\Component;
 
 class Navbar extends Component
 {
-    private array $available_locales;
+    public array $availableLocales;
+    public string $currentLocale;
+
     /**
      * Create a new component instance.
      *
@@ -16,7 +19,9 @@ class Navbar extends Component
     public function __construct()
     {
         // Récupérer les locales disponibles à partir des variables de l'application
-        $this->availableLocales = app()->getenv("available_locales");
+        $this->availableLocales = Config::get("app.available_locales");
+
+        // Récupérer la locale courante
         $this->currentLocale = App::getLocale();
     }
 

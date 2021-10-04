@@ -3,7 +3,6 @@
 namespace App\View\Components\Formulaires;
 
 use App\Models\Ville;
-use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Route;
 use Illuminate\View\Component;
 
@@ -39,11 +38,11 @@ class Etudiant extends Component
     }
 
     /**
-     * 
+     *
      * Retourne l'action à effectuer par le formulaire
-     * 
+     *
      * @return string
-     * 
+     *
      */
     public function actionRoute() {
         $actionsMapping = [
@@ -59,9 +58,9 @@ class Etudiant extends Component
     }
 
     /**
-     * 
+     *
      * Retourne les différents textes dynamiques de la page
-     * 
+     *
      * @return array
      */
     public function method() {
