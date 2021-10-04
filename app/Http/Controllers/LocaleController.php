@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Contracts\Session\Session;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Cookie;
+use Illuminate\Support\Facades\Session;
 
 class LocaleController extends Controller {
     /**
@@ -13,8 +14,11 @@ class LocaleController extends Controller {
      *
      */
     public function setLocale(Request $request, $lang) {
-        dd($lang);
-        cookie("locale", $lang);
-        $request->session()->put('locale', $lang);
+        // dd($lang);
+        App::setLocale($lang);
+        session()->put("locale", $lang);
+
+        // Retourner à la page précédente pour poursuivre la navigation
+        return redirect()->back();
     }
 }

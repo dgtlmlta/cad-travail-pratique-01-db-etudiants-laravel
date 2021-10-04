@@ -10001,3 +10001,9 @@ h3 {
     border-color: #dee2e6;
   }
 }
+
+
+/* Overrides Bootstrap */
+.dropdown-menu {
+    min-width: 1rem;
+}

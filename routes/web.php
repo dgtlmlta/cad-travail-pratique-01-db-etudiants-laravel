@@ -16,8 +16,8 @@ use App\Http\Controllers\LocaleController;
 */
 
 // Page d'accueil, liste des étudiants
-Route::get('/', [EtudiantController::class, "index"])->name("etudiants.index");
-Route::get('/etudiants', [EtudiantController::class, "index"]);
+Route::get('/', [EtudiantController::class, "index"])->name("index");
+Route::get('/etudiants', [EtudiantController::class, "index"])->name("etudiants.index");;
 
 
 // Formulaire d'ajout d'un étudiant

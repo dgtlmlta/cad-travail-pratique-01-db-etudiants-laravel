@@ -14,21 +14,52 @@
 
 	<!-- Scripts -->
 	<script type="text/javascript" src="/js/app.js"></script>
+    {{-- Librairie nécessaire pour les dropdowns --}}
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
 </head>
 
 <body class="m-4">
-	<nav class="container">
-		<a class="btn btn-outline-primary" href="/">Retour à l'accueil</a>
-		
-		@if(Route::is("etudiants.index"))
-		<a class="btn btn-outline-primary" href="{{ route("etudiants.create") }}">Ajouter un étudiant</a>
-		@endif		
-	</nav>
+	<header class="container">
+        <nav class="nav nav-pills nav-fill">
+            <a class="nav-item nav-link @if(Route::is("index"))active @endif" href="/">Accueil</a>
+
+            <a class="nav-item nav-link @if(Route::is("etudiants.index"))active @endif" href="/etudiants">Nos étudiants</a>
+
+            <a class="nav-item nav-link" href="/forum">Le forum</a>
+
+            <div class="nav-item dropdown dropdown-locale">
+                <button
+                    class="btn dropdown-toggle"
+                    type="button"
+                    id="dropdownLocaleButton"
+                    data-toggle="dropdown"
+                    aria-haspopup="true"
+                    aria-expanded="false">
+                    {{ strtoupper(App::getLocale()) }}
+                </button>
+
+                <div class="dropdown-menu" aria-labelledby="dropdownLocaleLink">
+                    <a
+                        class="dropdown-item
+                        @if(App::getLocale() === "fr") active @endif"
+                        href="/locale/fr">FR</a>
+                        <a
+                        class="dropdown-item
+                        @if(App::getLocale() === "en") active @endif"
+                        href="/locale/en">EN</a>
+                  </div>
+            </div>
+        </nav>
+
+
+    </header>
+
+
 
     <main class="container mt-5">
         <div class="col-8">
 		{{ $slot }}
 		</div>
-    </main>    
+    </main>
 </body>
 </html>
