@@ -20,7 +20,8 @@
 
 <body class="m-4">
 	<header class="container">
-        <nav class="nav nav-pills nav-fill">
+        <x-navbar></x-navbar>
+        {{-- <nav class="nav nav-pills nav-fill">
             <a class="nav-item nav-link @if(Route::is("index"))active @endif" href="/">Accueil</a>
 
             <a class="nav-item nav-link @if(Route::is("etudiants.index"))active @endif" href="/etudiants">Nos étudiants</a>
@@ -51,7 +52,7 @@
                         href="/locale/en">EN</a>
                   </div>
             </div>
-        </nav>
+        </nav> --}}
     </header>
 
     <main class="container mt-5">
