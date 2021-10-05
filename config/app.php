@@ -175,9 +175,11 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
 
+
         /*
          * Package Service Providers...
          */
+        Arcanedev\LaravelLang\LaravelLangServiceProvider::class,
 
         /*
          * Application Service Providers...
