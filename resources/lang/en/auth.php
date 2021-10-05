@@ -18,10 +18,10 @@ return [
     'throttle' => 'Too many login attempts. Please try again in :seconds seconds.',
 
     // Traduction des formulaires
-    "email"     => "courriel",
-    "password"  => "mot de passe",
-    "remember"  => "Se souvenir de moi",
-    "loginNoun" => "Authentification",
-    "loginVerb" => "S'authentifier",
+    "email"     => "email",
+    "password"  => "password",
+    "remember"  => "Remember me",
+    "loginNoun" => "Login",
+    "loginVerb" => "Login",
 
 ];
