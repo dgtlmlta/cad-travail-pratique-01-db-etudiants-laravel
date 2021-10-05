@@ -28,7 +28,7 @@ class EtudiantFactory extends Factory
             "telephone"    => $this->faker->phoneNumber(),
             "ddn"          => $this->faker->dateTimeThisCentury(),
             "ville_id"     => Ville::all()->random()->id,
-            "user_id"      => User::factory()->create()->id,
+            "id"           => User::factory()->create()->id,
         ];
     }
 }
