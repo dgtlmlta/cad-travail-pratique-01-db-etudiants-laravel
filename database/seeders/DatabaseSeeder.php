@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Etudiant;
+use App\Models\User;
 use App\Models\Ville;
 use Illuminate\Database\Seeder;
 
@@ -18,6 +19,7 @@ class DatabaseSeeder extends Seeder
         // Appeler les seeders respectifs des modèles
         $this->call([
             RoleSeeder::class,
+            UserSeeder::class,
             VilleSeeder::class,
             EtudiantSeeder::class,
         ]);

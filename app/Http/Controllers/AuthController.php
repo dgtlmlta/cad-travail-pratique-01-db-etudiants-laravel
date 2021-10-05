@@ -69,6 +69,6 @@ class AuthController extends Controller
             return back()->with("error", __("auth.failed"));
         }
 
-        return redirect()->intended('dashboard');
+        return redirect()->intended();
     }
 }
