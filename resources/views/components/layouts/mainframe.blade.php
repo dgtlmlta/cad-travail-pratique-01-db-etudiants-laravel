@@ -24,7 +24,7 @@
     </header>
 
     <main class="container mt-5">
-        <div class="col-8">
+        <div class="container-fluid col-8 justify-content-center">
 		{{ $slot }}
 		</div>
     </main>

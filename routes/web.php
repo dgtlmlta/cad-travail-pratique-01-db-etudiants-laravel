@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EtudiantController;
 use App\Http\Controllers\LocaleController;
@@ -42,11 +43,11 @@ Route::get('/etudiants/{etudiant}', [EtudiantController::class, "show"])->name("
 Route::delete('/etudiants/{etudiant}', [EtudiantController::class, "destroy"])->name("etudiants.destroy");
 
 // Authentification et enregistrement
-Route::get('/authentification', [CustomAuthController::class, 'index'])->name("auth.login");
-Route::post('/authentifier', [CustomAuthController::class, 'login'])->name('login.custom');
+Route::get('/authentification', [AuthController::class, 'index'])->name("auth.login");
+Route::post('/authentifier', [AuthController::class, 'login'])->name('login.custom');
 
-Route::get('/enregistrement', [CustomAuthController::class, 'create'])->name("auth.register");
-Route::post('/enregistrer', [CustomAuthController::class, 'store'])->name('register.custom');
+Route::get('/enregistrement', [AuthController::class, 'create'])->name("auth.register");
+Route::post('/enregistrer', [AuthController::class, 'store'])->name('register.custom');
 
 
 // Choix de langue
