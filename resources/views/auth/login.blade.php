@@ -34,12 +34,10 @@
                 </div>
 
                 <div class="d-grid mx-auto">
-                    <button type="submit" class="btn btn-dark btn-block">{{ __("auth.loginVerb") }}</button>
+                    <button type="submit" class="btn btn-primary btn-block">{{ __("auth.loginVerb") }}</button>
                 </div>
             </form>
 
         </div>
     </div>
-
-
 </x-layouts.mainframe>

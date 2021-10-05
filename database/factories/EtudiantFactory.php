@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use App\Models\Etudiant;
+use App\Models\User;
 use App\Models\Ville;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
@@ -23,12 +24,11 @@ class EtudiantFactory extends Factory
     public function definition()
     {
         return [
-            "nom"          => $this->faker->name(),
             "adresse"      => $this->faker->address(),
             "telephone"    => $this->faker->phoneNumber(),
-            "courriel"     => $this->faker->email(),
             "ddn"          => $this->faker->dateTimeThisCentury(),
-            "ville_id"     => Ville::all()->random()->id
+            "ville_id"     => Ville::all()->random()->id,
+            "user_id"      => User::factory()->create()->id,
         ];
     }
 }

@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Schema;
 
 class CreateEtudiantsTable extends Migration
 {
+    public bool $incrementing = false;
     /**
      * Run the migrations.
      *
@@ -15,11 +16,10 @@ class CreateEtudiantsTable extends Migration
     public function up()
     {
         Schema::create('etudiants', function (Blueprint $table) {
-            $table->id();
+            $table->foreignId("user_id")->constrained();
             $table->string("nom");
             $table->string("adresse");
             $table->string("telephone");
-            $table->string("courriel")->unique();
             $table->dateTime("ddn");
             $table->foreignId("ville_id")->constrained();
             $table->timestamps();
