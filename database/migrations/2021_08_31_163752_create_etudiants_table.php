@@ -17,7 +17,6 @@ class CreateEtudiantsTable extends Migration
     {
         Schema::create('etudiants', function (Blueprint $table) {
             $table->foreignId("user_id")->constrained();
-            $table->string("nom");
             $table->string("adresse");
             $table->string("telephone");
             $table->dateTime("ddn");

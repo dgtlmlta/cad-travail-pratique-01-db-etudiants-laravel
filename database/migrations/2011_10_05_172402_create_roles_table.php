@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Schema;
 
 class CreateRolesTable extends Migration
 {
+    public bool $incrementing = false;
     /**
      * Run the migrations.
      *
