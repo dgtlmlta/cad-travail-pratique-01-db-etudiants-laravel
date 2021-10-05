@@ -1,11 +1,11 @@
-<x-layouts.mainframe :pageTitle="$etudiant->nom">
+<x-layouts.mainframe :pageTitle="$etudiant->user->name">
 	<h1>{{ $etudiant->nom }}</h1>
-	
+
 	<dl>
 		<div>
 			<dt>Adresse</dt>
 			<dd>
-				<address>					
+				<address>
 					{{ $etudiant->adresse }}<br>
 					{{ $etudiant->ville->nom }}
 				</address>

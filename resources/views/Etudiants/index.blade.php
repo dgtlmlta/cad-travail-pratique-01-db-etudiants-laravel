@@ -2,8 +2,8 @@
     <h1>Nos étudiants</h1>
     <ul>
         @foreach ($etudiants as $etudiant)
-        {{-- {{ dd($etudiant) }} --}}
-        <li><a href="/etudiants/{{ $etudiant->user_id }}">{{ $etudiant->user->name }} de {{ $etudiant->ville->nom }}</a></li>
+        {{-- {{ dd($etudiant->user()) }} --}}
+        <li><a href="/etudiants/{{ $etudiant->id }}">{{ $etudiant->user->name }} de {{ $etudiant->ville->nom }}</a></li>
         @endforeach
     </ul>
 

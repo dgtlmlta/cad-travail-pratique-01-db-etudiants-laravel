@@ -15,12 +15,14 @@ class CreateEtudiantsTable extends Migration
     public function up()
     {
         Schema::create('etudiants', function (Blueprint $table) {
-            $table->foreignId("id")->references("id")->on("users");
+            $table->unsignedBigInteger("id");
             $table->string("adresse");
             $table->string("telephone");
             $table->dateTime("ddn");
             $table->foreignId("ville_id")->constrained();
             $table->timestamps();
+
+            $table->foreign("id")->references("id")->on("users");
         });
     }
 

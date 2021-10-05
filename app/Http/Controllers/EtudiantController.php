@@ -57,6 +57,7 @@ class EtudiantController extends Controller
         return redirect("/etudiants/{$etudiant->id}");
     }
 
+
     /**
      * Display the specified resource.
      *
