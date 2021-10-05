@@ -55,62 +55,18 @@ class AuthController extends Controller
         return redirect("login");
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\User  $user
-     * @return \Illuminate\Http\Response
-     */
-    public function show(User $user)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\User  $user
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(User $user)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\User  $user
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, User $user)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\User  $user
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(User $user)
-    {
-        //
-    }
-
-
-    public function customLogin(Request $request) {
+    public function login(Request $request) {
         $validation = $request->validate([
             'email'     => 'required|email',
             'password'  => 'required',
         ]);
 
+        $remember = ($request->input("remember") !== null);
+
         $credentials = $request->only('email', 'password');
 
-        if (!Auth::attempt($credentials)) {
-            return back()->with("error", "Problème dans le formulaire");
+        if (!Auth::attempt($credentials, $remember)) {
+            return back()->with("error", __("auth.failed"));
         }
 
         return redirect()->intended('dashboard');

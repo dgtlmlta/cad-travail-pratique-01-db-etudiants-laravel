@@ -6,7 +6,7 @@
                 @csrf
 
                 @if (Session::has('error'))
-                    <span>{{ Session::get('error') }}</span>
+                    <span class="text-danger d-block mb-2">{{ Session::get('error') }}</span>
                 @endif
 
                 <div class="form-group mb-3">
