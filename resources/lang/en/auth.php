@@ -17,4 +17,11 @@ return [
     'password' => 'The provided password is incorrect.',
     'throttle' => 'Too many login attempts. Please try again in :seconds seconds.',
 
+    // Traduction des formulaires
+    "email"     => "courriel",
+    "password"  => "mot de passe",
+    "remember"  => "Se souvenir de moi",
+    "loginNoun" => "Authentification",
+    "loginVerb" => "S'authentifier",
+
 ];
