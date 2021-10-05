@@ -8,5 +8,5 @@
          */
 
         "titre" => "Welcome to Entrailles-les-oies school !",
-        "taglineTitre" => "<i>Génies en herbe</i> national champions"
+        "taglineTitre" => "Home of <i>Génies en herbe</i> national champions"
     ];

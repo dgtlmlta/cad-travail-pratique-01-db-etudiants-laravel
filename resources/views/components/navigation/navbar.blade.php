@@ -1,11 +1,11 @@
 <nav class="nav nav-pills nav-fill">
-    <a class="nav-item nav-link @if (Route::is('index'))active @endif" href="/">Accueil</a>
+    <a class="nav-item nav-link @if (Route::is('index'))active @endif" href="/">{{ __("navigation.home") }}</a>
 
-    <a class="nav-item nav-link @if (Route::is('etudiants.index'))active @endif" href="/etudiants">Nos étudiants</a>
+    <a class="nav-item nav-link @if (Route::is('etudiants.index'))active @endif" href="/etudiants">{{ __("navigation.students") }}</a>
 
-    <a class="nav-item nav-link @if (Route::is('forum.index'))active @endif" href="/forum">Le forum</a>
+    <a class="nav-item nav-link @if (Route::is('forum.index'))active @endif" href="/forum">{{ __("navigation.forum") }}</a>
 
-    <a class="nav-item nav-link @if (Route::is('auth.login'))active @endif" href="/authentification">S'authentifier</a>
+    <a class="nav-item nav-link @if (Route::is('auth.login'))active @endif" href="/authentification">{{ __("navigation.login") }}</a>
 
     <div class="nav-item dropdown dropdown-locale">
         <button class="btn dropdown-toggle" type="button" id="dropdownLocaleButton" data-toggle="dropdown"
