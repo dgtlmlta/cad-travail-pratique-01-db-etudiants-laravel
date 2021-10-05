@@ -20,39 +20,7 @@
 
 <body class="m-4">
 	<header class="container">
-        <x-navigation.navbar test="test"></x-navigation.navbar>
-        {{-- <nav class="nav nav-pills nav-fill">
-            <a class="nav-item nav-link @if(Route::is("index"))active @endif" href="/">Accueil</a>
-
-            <a class="nav-item nav-link @if(Route::is("etudiants.index"))active @endif" href="/etudiants">Nos étudiants</a>
-
-            <a class="nav-item nav-link @if(Route::is("forum.index"))active @endif" href="/forum">Le forum</a>
-
-            <a class="nav-item nav-link @if(Route::is("auth.login"))active @endif" href="/authentification">S'authentifier</a>
-
-            <div class="nav-item dropdown dropdown-locale">
-                <button
-                    class="btn dropdown-toggle"
-                    type="button"
-                    id="dropdownLocaleButton"
-                    data-toggle="dropdown"
-                    aria-haspopup="true"
-                    aria-expanded="false">
-                    {{ strtoupper(App::getLocale()) }}
-                </button>
-
-                <div class="dropdown-menu" aria-labelledby="dropdownLocaleLink">
-                    <a
-                        class="dropdown-item
-                        @if(App::getLocale() === "fr") active @endif"
-                        href="/locale/fr">FR</a>
-                        <a
-                        class="dropdown-item
-                        @if(App::getLocale() === "en") active @endif"
-                        href="/locale/en">EN</a>
-                  </div>
-            </div>
-        </nav> --}}
+        <x-navigation.navbar />
     </header>
 
     <main class="container mt-5">
