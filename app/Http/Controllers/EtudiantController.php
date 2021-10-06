@@ -3,9 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Models\Etudiant;
+use App\Models\User;
 use App\Models\Ville;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Route;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Validation\Rules\Password;
 
 class EtudiantController extends Controller {
     /**
@@ -43,14 +46,43 @@ class EtudiantController extends Controller {
     public function store(Request $request) {
         $this->authorize("create", Etudiant::class);
 
+        $request->validate([
+            "name" => [
+                "required",
+            ],
+            "email" => [
+                "required",
+                "email",
+                "unique:users"
+            ],
+            "password" => [
+                "required",
+                "confirmed",
+                Password::min(10)
+                    ->uncompromised()
+            ]
+        ]);
+
+        // Création de l'utilisateur en premier afin de récupérer son id
+        $user = new User();
+
+        $user->name     = $request->nom;
+        $user->email    = $request->courriel;
+        $user->password = Hash::make($request->email);
+
+        if (!$user->save()) {
+            return redirect("/");
+        };
+
+        $userId = $user->id;
+
         $etudiant = new Etudiant();
 
-        $etudiant->nom = $request->nom;
-        $etudiant->adresse = $request->adresse;
-        $etudiant->ville_id = $request->ville_id;
-        $etudiant->courriel = $request->courriel;
+        $etudiant->id        = $userId;
+        $etudiant->adresse   = $request->adresse;
+        $etudiant->ville_id  = $request->ville_id;
         $etudiant->telephone = $request->telephone;
-        $etudiant->ddn = $request->ddn;
+        $etudiant->ddn       = $request->ddn;
 
         if (!$etudiant->save()) {
             return redirect("/");

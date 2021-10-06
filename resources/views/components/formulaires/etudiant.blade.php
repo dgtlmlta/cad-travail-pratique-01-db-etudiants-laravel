@@ -40,7 +40,7 @@
     <div class="form-group">
         <label for="inputCourriel">{{ ucfirst(__('common.email')) }} :</label>
         <input class="form-control"
-               type="email"
+               type="text"
                id="inputCourriel"
                name="courriel"
                @if ($etudiant) value="{{ $etudiant->user->email }}"@endif>
