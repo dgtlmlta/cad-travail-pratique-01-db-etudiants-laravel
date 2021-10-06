@@ -18,6 +18,7 @@ class DatabaseSeeder extends Seeder
     {
         // Appeler les seeders respectifs des modèles
         $this->call([
+            LocaleSeeder::class,
             RoleSeeder::class,
             UserSeeder::class,
             VilleSeeder::class,

@@ -116,6 +116,9 @@ class EtudiantController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function destroy(Etudiant $etudiant) {
+        // Vérifier si l'utilisateur peut supprimer l'étudiant
+        $this->authorize("delete");
+
         //
         if (!$etudiant->delete()) {
             return redirect("/etudiants/{$etudiant->id}");

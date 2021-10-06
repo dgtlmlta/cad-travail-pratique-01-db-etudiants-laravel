@@ -25,27 +25,30 @@
         </div>
 
         <div>
-            <dt>{{ ucfirst(__("common.dob")) }}</dt>
+            <dt>{{ ucfirst(__('common.dob')) }}</dt>
 
             <dd>{{ $etudiant->formatted_ddn }}</dd>
         </div>
     </dl>
 
     <div class="mt-3">
+        {{-- Peut mettre à jour un étudiant --}}
         @can('update', $etudiant)
             <a class="btn btn-primary"
-               href="/etudiants/{{ $etudiant->id }}/modifier">{{ ucfirst(__("etudiants/show.updateButton")) }}</a>
+               href="/etudiants/{{ $etudiant->id }}/modifier">{{ ucfirst(__('etudiants/show.updateButton')) }}</a>
         @endcan
 
-
-        <form action="{{ route('etudiants.destroy', $etudiant->id) }}"
-              method="POST"
-              class="mt-3">
-            @csrf
-            @method('delete')
-            <button class="btn btn-danger"
-                    href="/etudiants/{{ $etudiant->id }}"
-                    type="submit">{{ ucfirst(__("etudiants/show.deleteButton")) }}</button>
-        </form>
+        {{-- Peut supprimer un étudiant --}}
+        @can('delete', $etudiant)
+            <form action="{{ route('etudiants.destroy', $etudiant->id) }}"
+                  method="POST"
+                  class="mt-3">
+                @csrf
+                @method('delete')
+                <button class="btn btn-danger"
+                        href="/etudiants/{{ $etudiant->id }}"
+                        type="submit">{{ ucfirst(__('etudiants/show.deleteButton')) }}</button>
+            </form>
+        @endcan
     </div>
 </x-layouts.mainframe>

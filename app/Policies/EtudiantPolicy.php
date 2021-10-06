@@ -61,6 +61,7 @@ class EtudiantPolicy {
      */
     public function delete(User $user, Etudiant $etudiant) {
         //
+        return $user->isAdmin();
     }
 
     /**
