@@ -138,7 +138,7 @@ return [
         'date'                  => 'date',
         'day'                   => 'jour',
         'description'           => 'description',
-        'email'                 => 'adresse email',
+        'email'                 => 'adresse courriel',
         'excerpt'               => 'extrait',
         'first_name'            => 'prénom',
         'gender'                => 'genre',

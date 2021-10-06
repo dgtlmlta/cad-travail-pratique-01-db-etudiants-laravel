@@ -10,6 +10,9 @@
                id="inputNom"
                name="nom"
                @if ($etudiant) value="{{ $etudiant->user->name }}"@endif>
+        @if ($errors->has('name'))
+            <span class="text-danger">{{ $errors->first('name') }}</span>
+        @endif
     </div>
 
     <div class="form-group">
@@ -44,6 +47,28 @@
                id="inputCourriel"
                name="courriel"
                @if ($etudiant) value="{{ $etudiant->user->email }}"@endif>
+        @if ($errors->has('email'))
+            <span class="text-danger">{{ $errors->first('email') }}</span>
+        @endif
+    </div>
+
+    <div class="form-group">
+        <label for="inputPassword">{{ ucfirst(__('common.password')) }} :</label>
+        <input class="form-control"
+               type="password"
+               id="inputPassword"
+               name="password">
+        @if ($errors->has('password'))
+            <span class="text-danger">{{ $errors->first('password') }}</span>
+        @endif
+    </div>
+
+    <div class="form-group">
+        <label for="inputPasswordConfirmation">{{ ucfirst(__('common.password')) }} (confirmation):</label>
+        <input class="form-control"
+               type="password"
+               id="inputPasswordConfirmation"
+               name="password_confirmation">
     </div>
 
     <div class="form-group">
