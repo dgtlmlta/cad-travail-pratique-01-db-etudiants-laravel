@@ -7,8 +7,9 @@
      *
      */
     return [
-        "address" => "adresse",
-        "email"   => "courriel",
-        "phone"   => "téléphone",
-        "dob"     => "date de naissance",
+        "address"  => "adresse",
+        "email"    => "courriel",
+        "phone"    => "téléphone",
+        "dob"      => "date de naissance",
+        "password" => "mot de passe"
     ];
