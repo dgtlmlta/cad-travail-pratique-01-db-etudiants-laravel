@@ -4,5 +4,7 @@
         "home"      => "Accueil",
         "students"  => "Nos étudiants",
         "forum"     => "Forum",
-        "login"     => "S'authentifier"
+        "login"     => "S'authentifier",
+        "logout"    => "Déconnexion",
+        "greeting"  => "Salut"
     ];

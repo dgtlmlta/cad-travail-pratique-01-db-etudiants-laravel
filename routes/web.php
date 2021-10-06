@@ -45,9 +45,12 @@ Route::delete('/etudiants/{etudiant}', [EtudiantController::class, "destroy"])->
 // Authentification et enregistrement
 Route::get('/authentification', [AuthController::class, 'index'])->name("auth.login");
 Route::post('/authentifier', [AuthController::class, 'login'])->name('login.custom');
+Route::get('/deconnecter', [AuthController::class, 'logout'])->name('logout.custom');;
 
 Route::get('/enregistrement', [AuthController::class, 'create'])->name("auth.register");
 Route::post('/enregistrer', [AuthController::class, 'store'])->name('register.custom');
+
+
 
 
 // Choix de langue
