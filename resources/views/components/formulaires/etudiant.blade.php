@@ -9,7 +9,7 @@
                type="text"
                id="inputNom"
                name="nom"
-               @if ($etudiant) value="{{ $etudiant->nom }}"@endif>
+               @if ($etudiant) value="{{ $etudiant->user->name }}"@endif>
     </div>
 
     <div class="form-group">
@@ -40,7 +40,7 @@
                type="email"
                id="inputCourriel"
                name="courriel"
-               @if ($etudiant) value="{{ $etudiant->courriel }}"@endif>
+               @if ($etudiant) value="{{ $etudiant->user->email }}"@endif>
     </div>
 
     <div class="form-group">

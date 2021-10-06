@@ -18,6 +18,7 @@ class EtudiantController extends Controller
     {
         //
         return view("etudiants.index", [
+            "pageTitle" => __("etudiants/index.pageTitle"),
             "etudiants" => Etudiant::paginate(12)
         ]);
     }

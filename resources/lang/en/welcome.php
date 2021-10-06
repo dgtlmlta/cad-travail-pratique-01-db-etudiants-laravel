@@ -7,6 +7,7 @@
          *
          */
 
-        "titre" => "Welcome to Entrailles-les-oies school !",
-        "taglineTitre" => "Home of <i>Génies en herbe</i> national champions"
+        "pageTitle"    => "Welcome!",
+        "headerTitle"  => "Welcome to Entrailles-les-oies school!",
+        "taglineTitle" => "Home of <i>Génies en herbe</i> national champions"
     ];
