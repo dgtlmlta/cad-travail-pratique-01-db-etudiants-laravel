@@ -16,7 +16,7 @@
                     data-toggle="dropdown"
                     aria-haspopup="true"
                     aria-expanded="false">
-                Salut, {{ Auth::user()->name }} !
+                {{ __("navigation.greeting") }}, {{ Auth::user()->name }} !
             </button>
 
             <div class="dropdown-menu"
