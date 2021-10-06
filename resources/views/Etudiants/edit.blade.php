@@ -1,5 +1,5 @@
-<x-layouts.mainframe pageTitle="Formulaire de mise à jour d'étudiant">
+<x-layouts.mainframe :pageTitle="$pageTitle">
 	<h1>Modifier un étudiant</h1>
-	<x-formulaires.etudiant :etudiant="$etudiant">
-	</x-formulaires.etudiant>
+
+	<x-formulaires.etudiant :etudiant="$etudiant" />
 </x-layouts.mainframe>

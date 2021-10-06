@@ -7,6 +7,7 @@
      *
      */
     return [
+        "name"     => "name",
         "address"  => "address",
         "email"    => "email",
         "phone"    => "phone",
@@ -14,4 +15,6 @@
         "password" => "password",
         "toDelete" => "delete",
         "logout"   => "logout",
+        "city"     => "city",
+        "save"     => "save",
     ];

@@ -29,7 +29,9 @@ class EtudiantController extends Controller {
     public function create() {
         $this->authorize("create", Etudiant::class);
 
-        return view("etudiants.create");
+        return view("etudiants.create", [
+            "pageTitle" => ucfirst(__("etudiants/create.pageTitle"))
+        ]);
     }
 
     /**
@@ -82,7 +84,8 @@ class EtudiantController extends Controller {
         $this->authorize("update", $etudiant);
 
         return view("etudiants.edit", [
-            "etudiant" => $etudiant
+            "etudiant" => $etudiant,
+            "pageTitle" => ucfirst(__("etudiants/edit.pageTitle"))
         ]);
     }
 

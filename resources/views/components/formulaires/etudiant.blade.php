@@ -4,7 +4,7 @@
     @method($method)
 
     <div class="form-group">
-        <label for="inputNom">Nom :</label>
+        <label for="inputNom">{{ ucfirst(__('common.name')) }} :</label>
         <input class="form-control"
                type="text"
                id="inputNom"
@@ -13,7 +13,7 @@
     </div>
 
     <div class="form-group">
-        <label for="inputAdresse">Adresse :</label>
+        <label for="inputAdresse">{{ ucfirst(__('common.address')) }} :</label>
         <textarea class="form-control"
                   id="inputAdresse"
                   name="adresse">@if ($etudiant){{ $etudiant->adresse }}@endif
@@ -21,10 +21,13 @@
     </div>
 
     <div class="form-group">
-        <label for="selectVille">Ville :</label>
+        <label for="selectVille">{{ ucfirst(__('common.city')) }} :</label>
         <select class="form-control"
                 id="selectVille"
                 name="ville_id">
+            <option value=""
+                    disabled
+                    selected>{{ __('etudiants/create.selectCityDefault') }}</option>
             @foreach ($villes as $ville)
                 <option value="{{ $ville->id }}"
                         @if ($etudiant && $etudiant->ville_id == $ville->id) selected @endif>
@@ -35,7 +38,7 @@
     </div>
 
     <div class="form-group">
-        <label for="inputCourriel">Courriel :</label>
+        <label for="inputCourriel">{{ ucfirst(__('common.email')) }} :</label>
         <input class="form-control"
                type="email"
                id="inputCourriel"
@@ -44,7 +47,7 @@
     </div>
 
     <div class="form-group">
-        <label for="inputTelephone">Téléphone :</label>
+        <label for="inputTelephone">{{ ucfirst(__('common.phone')) }} :</label>
         <input class="form-control"
                type="phone"
                id="inputTelephone"
@@ -53,7 +56,7 @@
     </div>
 
     <div class="form-group">
-        <label for="inputDdn">Date de naissance :</label>
+        <label for="inputDdn">{{ ucfirst(__('common.dob')) }} :</label>
         <input class="form-control"
                type="date"
                id="inputDdn"
@@ -63,6 +66,6 @@
 
     <div class="form-group">
         <button class="btn btn-primary"
-                type="submit">Soumettre</button>
+                type="submit">{{ ucfirst(__('common.save')) }}</button>
     </div>
 </form>
