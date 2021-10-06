@@ -3,7 +3,8 @@
 
     <dl>
         <div>
-            <dt>Adresse</dt>
+            <dt>{{ ucfirst(__('common.address')) }}</dt>
+
             <dd>
                 <address>
                     {{ $etudiant->adresse }}<br>
@@ -11,24 +12,29 @@
                 </address>
             </dd>
         </div>
+
         <div>
-            <dt>Courriel</dt>
+            <dt>{{ ucfirst(__('common.email')) }}</dt>
             <dd>{{ $etudiant->user->email }}</dd>
         </div>
+
         <div>
-            <dt>Téléphone</dt>
+            <dt>{{ ucfirst(__('common.phone')) }}</dt>
+
             <dd>{{ $etudiant->telephone }}</dd>
         </div>
+
         <div>
-            <dt>Date de naissance</dt>
+            <dt>{{ ucfirst(__("common.dob")) }}</dt>
+
             <dd>{{ $etudiant->formatted_ddn }}</dd>
         </div>
     </dl>
 
     <div class="mt-3">
-        @can("update", $etudiant)
-        <a class="btn btn-primary"
-           href="/etudiants/{{ $etudiant->id }}/modifier">Mettre à jour</a>
+        @can('update', $etudiant)
+            <a class="btn btn-primary"
+               href="/etudiants/{{ $etudiant->id }}/modifier">Mettre à jour</a>
         @endcan
 
 

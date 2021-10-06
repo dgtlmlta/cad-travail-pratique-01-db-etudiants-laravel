@@ -11,5 +11,6 @@
         "email"    => "email",
         "phone"    => "phone",
         "dob"      => "date of birth",
-        "password" => "password"
+        "password" => "password",
+        "toDelete" => "delete",
     ];
