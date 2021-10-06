@@ -52,8 +52,6 @@ class Etudiant extends Component
             ])
         ];
 
-        dd($this->routeName);
-
         return $actionsMapping[$this->routeName];
     }
 
