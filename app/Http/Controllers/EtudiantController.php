@@ -80,7 +80,9 @@ class EtudiantController extends Controller
      */
     public function edit(Etudiant $etudiant)
     {
-        //
+        // Vérifier si l'utilisateur peut modifier l'étudiant
+        $this->authorize("update", $etudiant);
+
         return view("etudiants.edit", [
             "etudiant" => $etudiant
         ]);
