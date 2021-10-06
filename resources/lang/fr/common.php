@@ -11,5 +11,6 @@
         "email"    => "courriel",
         "phone"    => "téléphone",
         "dob"      => "date de naissance",
-        "password" => "mot de passe"
+        "password" => "mot de passe",
+        "logout"   => "déconnexion",
     ];

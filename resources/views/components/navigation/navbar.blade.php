@@ -23,7 +23,7 @@
                  aria-labelledby="dropdownUserLink">
                 <a class="dropdown-item"
                    href="/deconnecter">
-                    {{ __('logout') }}</a>
+                    {{ ucfirst(__('common.logout')) }}</a>
             </div>
         </div>
     @endauth

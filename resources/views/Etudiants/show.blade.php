@@ -34,7 +34,7 @@
     <div class="mt-3">
         @can('update', $etudiant)
             <a class="btn btn-primary"
-               href="/etudiants/{{ $etudiant->id }}/modifier">Mettre à jour</a>
+               href="/etudiants/{{ $etudiant->id }}/modifier">{{ ucfirst(__("etudiants/show.updateButton")) }}</a>
         @endcan
 
 
@@ -43,9 +43,9 @@
               class="mt-3">
             @csrf
             @method('delete')
-            <button class="btn btn-primary"
+            <button class="btn btn-danger"
                     href="/etudiants/{{ $etudiant->id }}"
-                    type="submit">Supprimer</button>
+                    type="submit">{{ ucfirst(__("etudiants/show.deleteButton")) }}</button>
         </form>
     </div>
 </x-layouts.mainframe>

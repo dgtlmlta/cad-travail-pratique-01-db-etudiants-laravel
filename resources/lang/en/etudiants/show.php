@@ -1,4 +1,4 @@
-<?
+<?php
 
     return [
         "deleteButton" => "delete student",

@@ -13,4 +13,5 @@
         "dob"      => "date of birth",
         "password" => "password",
         "toDelete" => "delete",
+        "logout"   => "logout",
     ];
