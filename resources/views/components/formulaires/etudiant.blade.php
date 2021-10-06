@@ -10,8 +10,8 @@
                id="inputNom"
                name="nom"
                @if ($etudiant) value="{{ $etudiant->user->name }}"@endif>
-        @if ($errors->has('name'))
-            <span class="text-danger">{{ $errors->first('name') }}</span>
+        @if ($errors->has('nom'))
+            <span class="text-danger">{{ $errors->first('nom') }}</span>
         @endif
     </div>
 
@@ -19,8 +19,7 @@
         <label for="inputAdresse">{{ ucfirst(__('common.address')) }} :</label>
         <textarea class="form-control"
                   id="inputAdresse"
-                  name="adresse">@if ($etudiant){{ $etudiant->adresse }}@endif
-        </textarea>
+                  name="adresse">@if ($etudiant){{ $etudiant->adresse }}@endif</textarea>
     </div>
 
     <div class="form-group">
@@ -47,8 +46,8 @@
                id="inputCourriel"
                name="courriel"
                @if ($etudiant) value="{{ $etudiant->user->email }}"@endif>
-        @if ($errors->has('email'))
-            <span class="text-danger">{{ $errors->first('email') }}</span>
+        @if ($errors->has('courriel'))
+            <span class="text-danger">{{ $errors->first('courriel') }}</span>
         @endif
     </div>
 

@@ -47,10 +47,10 @@ class EtudiantController extends Controller {
         $this->authorize("create", Etudiant::class);
 
         $request->validate([
-            "name" => [
+            "nom" => [
                 "required",
             ],
-            "email" => [
+            "courriel" => [
                 "required",
                 "email",
                 "unique:users"
