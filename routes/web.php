@@ -29,7 +29,7 @@ Route::get('/etudiants', [EtudiantController::class, "index"])->name("etudiants.
 // Formulaire d'ajout d'un étudiant
 Route::get('/etudiants/ajout', [EtudiantController::class, "create"])->name("etudiants.create");
 // Action d'ajout à la base de données
-Route::post('/etudiants/ajout', [EtudiantController::class, "store"])->name("etudiants.store");
+Route::post('/etudiants/ajouter', [EtudiantController::class, "store"])->name("etudiants.store");
 
 
 // Formulaire de mise à jour d'un étudiant

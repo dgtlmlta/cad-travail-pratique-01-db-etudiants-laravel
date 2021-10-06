@@ -27,7 +27,8 @@ class EtudiantController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function create() {
-        //
+        $this->authorize("create", Etudiant::class);
+
         return view("etudiants.create");
     }
 
@@ -38,6 +39,8 @@ class EtudiantController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request) {
+        $this->authorize("create", Etudiant::class);
+
         $etudiant = new Etudiant();
 
         $etudiant->nom = $request->nom;
