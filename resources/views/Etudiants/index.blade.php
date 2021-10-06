@@ -2,7 +2,7 @@
     <h1>{{ __("etudiants/index.headerTitle") }}</h1>
     <ul>
         @foreach ($etudiants as $etudiant)
-        <li><a href="/etudiants/{{ $etudiant->id }}">{{ $etudiant->user->name }} de {{ $etudiant->ville->nom }}</a></li>
+        <li><a href="/etudiants/{{ $etudiant->id }}">{{ $etudiant->user->name }}</a></li>
         @endforeach
     </ul>
 
