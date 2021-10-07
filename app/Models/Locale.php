@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Locale extends Model
 {
     use HasFactory;
+
+    public    $incrementing = false;
+    protected $primaryKey   = "abbreviation";
+    protected $keyType      = "string";
 }
