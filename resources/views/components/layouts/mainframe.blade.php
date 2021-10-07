@@ -11,6 +11,7 @@
 
 	<!-- Stylesheets -->
 	<link rel="stylesheet" href="/css/app.css">
+	<link rel="stylesheet" href="/css/bootstrap-overrides.css">
 
 	<!-- Scripts -->
 	<script type="text/javascript" src="/js/app.js"></script>

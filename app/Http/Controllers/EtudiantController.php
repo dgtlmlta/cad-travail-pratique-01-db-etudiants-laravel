@@ -50,16 +50,26 @@ class EtudiantController extends Controller {
             "nom" => [
                 "required",
             ],
+            "adresse" => [
+                "required"
+            ],
+            "ville_id" => [
+                "required",
+                "exists:villes,id"
+            ],
             "courriel" => [
                 "required",
                 "email",
-                "unique:users"
+                "unique:users,email"
             ],
             "password" => [
                 "required",
                 "confirmed",
                 Password::min(10)
                     ->uncompromised()
+            ],
+            "ddn" => [
+                "required"
             ]
         ]);
 
@@ -68,7 +78,7 @@ class EtudiantController extends Controller {
 
         $user->name     = $request->nom;
         $user->email    = $request->courriel;
-        $user->password = Hash::make($request->email);
+        $user->password = Hash::make($request->password);
 
         if (!$user->save()) {
             return redirect("/");

@@ -17,7 +17,7 @@ class CreateEtudiantsTable extends Migration
         Schema::create('etudiants', function (Blueprint $table) {
             $table->unsignedBigInteger("id")->unique();
             $table->string("adresse");
-            $table->string("telephone");
+            $table->string("telephone")->nullable();
             $table->dateTime("ddn");
             $table->foreignId("ville_id")->constrained();
             $table->timestamps();

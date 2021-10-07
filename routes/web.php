@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EtudiantController;
@@ -53,6 +54,13 @@ Route::get('/enregistrement', [AuthController::class, 'create'])->name("auth.reg
 Route::post('/enregistrer', [AuthController::class, 'store'])->name('register.custom');
 
 
+/**
+ *
+ * Section pour le les articles
+ *
+ */
+
+Route::get("/articles", [ArticleController::class, "index"])->middleware("auth");
 
 
 // Choix de langue
