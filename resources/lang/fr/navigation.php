@@ -3,7 +3,7 @@
     return [
         "home"      => "Accueil",
         "students"  => "Nos étudiants",
-        "forum"     => "Forum",
+        "posts"     => "Articles",
         "login"     => "S'authentifier",
         "logout"    => "Déconnexion",
         "greeting"  => "Salut"
