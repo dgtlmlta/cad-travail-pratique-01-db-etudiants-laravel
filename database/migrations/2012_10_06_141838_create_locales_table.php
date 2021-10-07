@@ -14,8 +14,7 @@ class CreateLocalesTable extends Migration
     public function up()
     {
         Schema::create('locales', function (Blueprint $table) {
-            $table->id();
-            $table->string("abbreviation");
+            $table->string("abbreviation")->primary();
             $table->string("label");
             $table->timestamps();
         });
