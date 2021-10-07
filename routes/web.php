@@ -60,7 +60,7 @@ Route::post('/enregistrer', [AuthController::class, 'store'])->name('register.cu
  *
  */
 
-Route::get("/articles", [ArticleController::class, "index"])->middleware("auth");
+Route::get("/articles", [ArticleController::class, "index"])->middleware("auth")->name("articles.index");
 
 
 // Choix de langue

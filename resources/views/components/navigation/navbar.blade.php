@@ -6,7 +6,7 @@
        href="/etudiants">{{ __('navigation.students') }}</a>
 
     <a class="nav-item nav-link @if (Route::is('forum.index'))active @endif"
-       href="/forum">{{ __('navigation.forum') }}</a>
+       href="/articles">{{ __('navigation.articles') }}</a>
 
     @auth
         <div class="nav-item dropdown dropdown-user">
