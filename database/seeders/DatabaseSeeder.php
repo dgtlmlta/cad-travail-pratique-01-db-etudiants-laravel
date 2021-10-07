@@ -23,6 +23,8 @@ class DatabaseSeeder extends Seeder
             UserSeeder::class,
             VilleSeeder::class,
             EtudiantSeeder::class,
+            ArticleSeeder::class,
+            ArticleContentSeeder::class,
         ]);
     }
 }

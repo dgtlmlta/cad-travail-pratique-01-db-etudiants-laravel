@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Locale;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -18,7 +19,7 @@ class CreateArticleContentsTable extends Migration
             $table->string("title");
             $table->text("body");
             $table->foreignId("article_id")->constrained();
-            $table->foreignId("locale_id")->constrained();
+            $table->foreignIdFor(Locale::class, "locale_id");
             $table->timestamps();
 
             $table->unique(["article_id", "locale_id"], "article_locale_unique");

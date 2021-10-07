@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use App\Models\Article;
+use App\Models\Etudiant;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class ArticleFactory extends Factory
@@ -23,6 +24,7 @@ class ArticleFactory extends Factory
     {
         return [
             //
+            "etudiant_id" => Etudiant::all()->random()->id
         ];
     }
 }
