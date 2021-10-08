@@ -19,7 +19,7 @@ class ArticlePolicy
     public function viewAny(User $user)
     {
         //
-        return $user->isEtudiant();
+        return $user->isEtudiant() || $user->isAdmin();
     }
 
     /**
@@ -42,7 +42,12 @@ class ArticlePolicy
      */
     public function create(User $user)
     {
-        //
+        // Seulement les étudiants peuvent écrire de nouveaux articles et non les administrateurs et utilisateurs réguliers
+        if(!$user->isEtudiant()) {
+            return $this->deny("Seulement les étudiants peuvent publier des articles");
+        };
+
+        return true;
     }
 
     /**

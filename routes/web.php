@@ -59,13 +59,15 @@ Route::post('/enregistrer', [AuthController::class, 'store'])->name('register.cu
  *
  */
 Route::middleware(['auth'])->group(function () {
-    // Routes pour les articles
+    // Liste d'articles
     Route::get("/articles", [ArticleController::class, "index"])->name("articles.index");
-    Route::get("/articles/{article}", [ArticleController::class, "show"])->name("articles.show");
 
     // Création d'articles
     Route::get("/articles/ajout", [ArticleController::class, "create"])->name("articles.create");
     Route::post("/articles/ajouter", [ArticleController::class, "store"])->name("articles.store");
+
+    // Affichage d'un article
+    Route::get("/articles/{article}", [ArticleController::class, "show"])->name("articles.show");
 
     // Modifications d'article
     Route::get("/articles/{article}/modifier", [ArticleController::class, "create"])->name("articles.edit");
