@@ -18,7 +18,7 @@ use App\Http\Controllers\LocaleController;
 */
 
 // Page d'accueil, liste des étudiants
-Route::get('/', function() {
+Route::get('/', function () {
     return view("bienvenue", [
         "pageTitle" => __("welcome.pageTitle")
     ]);
@@ -56,13 +56,19 @@ Route::post('/enregistrer', [AuthController::class, 'store'])->name('register.cu
 
 /**
  *
- * Section pour le les articles
+ * Sections protégées par l'authentification
  *
  */
+Route::middleware(['auth'])->group(function () {
+    // Routes pour les articles
+    Route::get("/articles", [ArticleController::class, "index"])->name("articles.index");
 
-Route::get("/articles", [ArticleController::class, "index"])->middleware("auth")->name("articles.index");
+    Route::get("/articles/ajout", [ArticleController::class, "create"])->name("articles.create");
 
-Route::get("/articles/ajout", [ArticleController::class, "create"])->middleware("auth")->name("articles.create");
+
+    // Routes pour les fichiers
+});
+
 
 
 /**
