@@ -158,5 +158,6 @@ return [
         'title'                 => 'titre',
         'username'              => 'nom d\'utilisateur',
         'year'                  => 'année',
+        "locale_id"             => "langue",
     ],
 ];

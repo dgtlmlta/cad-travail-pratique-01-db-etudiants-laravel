@@ -9,7 +9,11 @@
                type="text"
                id="inputTitle"
                name="title"
-               @if ($article) value="{{ $article->localizedContent->title }}"@endif>
+               value="{{ ((old("title") !== null) ?
+                            old("title") :
+                            (($article !== null) ?
+                                $article->localizedContent->title :
+                                "")) }}">
         @if ($errors->has('title'))
             <span class="text-danger">{{ $errors->first('title') }}</span>
         @endif
@@ -19,7 +23,14 @@
         <label for="inputBody">{{ ucfirst(__('common.body')) }} :</label>
         <textarea class="form-control"
                   id="inputBody"
-                  name="adresse">@if ($article){{ $article->localizedContent->body }}@endif</textarea>
+                  name="body">{{ ((old("title") !== null) ?
+                                    old("title") :
+                                    (($article !== null) ?
+                                        $article->localizedContent->title :
+                                        "")) }}</textarea>
+        @if ($errors->has('body'))
+            <span class="text-danger">{{ $errors->first('body') }}</span>
+        @endif
     </div>
 
     <div class="form-group">
@@ -30,13 +41,16 @@
             <option value=""
                     disabled
                     selected>{{ __('articles/create.selectLocaleDefault') }}</option>
-            @foreach (config("app.available_locales") as $locale => $label)
+            @foreach (config('app.available_locales') as $locale => $label)
                 <option value="{{ $locale }}"
                         @if ($article && $locale == App::getLocale()) selected @endif>
                     {{ $label }}
                 </option>
             @endforeach
         </select>
+        @if ($errors->has('locale_id'))
+            <span class="text-danger">{{ $errors->first('locale_id') }}</span>
+        @endif
     </div>
 
     <div class="form-group">

@@ -153,7 +153,8 @@ return [
     */
 
     'attributes' => [
-        "email" => "email address",
+        "email"     => "email address",
+        "locale_id" => "language",
     ],
 
 ];
