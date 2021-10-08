@@ -1,9 +1,9 @@
 <dl>
     @forelse ($articles as $article)
         <div>
-            <dt>{{  }}</dt>
+            <dt>{{ $article->content(App::getLocale())->title }}</dt>
             <dd>
-
+                {{ $article->content(App::getLocale())->body }}
             </dd>
         </div>
     @empty

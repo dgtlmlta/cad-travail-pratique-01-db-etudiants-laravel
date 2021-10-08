@@ -15,6 +15,9 @@ class ArticleController extends Controller
     public function index()
     {
         //
+        return view("articles.index", [
+            "pageTitle" => __("articles/index.pageTitle")
+        ]);
     }
 
     /**
