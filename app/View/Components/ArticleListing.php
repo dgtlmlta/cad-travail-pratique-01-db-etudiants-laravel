@@ -19,7 +19,7 @@ class ArticleListing extends Component
     {
         // Filtrer les articles afin d'obtenir que ceux qui ont une version de la locale courante
         $this->articles = Article::whereHas("localizedContent")
-                                    ->with("localizedContent")
+                                    ->with(["localizedContent", "author.user"])
                                     ->get();
     }
 
