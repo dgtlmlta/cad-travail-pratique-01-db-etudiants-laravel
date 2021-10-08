@@ -62,6 +62,12 @@ Route::post('/enregistrer', [AuthController::class, 'store'])->name('register.cu
 
 Route::get("/articles", [ArticleController::class, "index"])->middleware("auth")->name("articles.index");
 
+Route::get("/articles/ajout", [ArticleController::class, "create"])->middleware("auth")->name("articles.create");
 
-// Choix de langue
+
+/**
+ *
+ * Choix de langue
+ *
+ */
 Route::get('/locale/{lang}', [LocaleController::class, "setLocale"]);
