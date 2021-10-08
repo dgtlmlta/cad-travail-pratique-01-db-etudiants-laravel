@@ -32,6 +32,7 @@ class ArticlePolicy
     public function view(User $user, Article $article)
     {
         //
+        return $user->isEtudiant() || $user->isAdmin();
     }
 
     /**
@@ -59,7 +60,12 @@ class ArticlePolicy
      */
     public function update(User $user, Article $article)
     {
-        //
+        // Seulement l'auteur de l'article peut le modifier
+        if($user->id !== $article->etudiant_id) {
+            return $this->deny("Seulement les étudiants peuvent publier des articles");
+        };
+
+        return true;
     }
 
     /**
@@ -72,6 +78,7 @@ class ArticlePolicy
     public function delete(User $user, Article $article)
     {
         //
+        return $user->isAdmin() || $user->id === $article->etudiant_id;
     }
 
     /**
