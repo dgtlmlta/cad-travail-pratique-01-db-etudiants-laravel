@@ -8,6 +8,11 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class ArticleController extends Controller {
+    public function __construct() {
+        // Permettre de filtrer automatiquement les requêtes à l'aide d'ArticlePolicy
+        $this->authorizeResource(Article::class, 'article');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -57,7 +62,7 @@ class ArticleController extends Controller {
 
         $article->etudiant_id = Auth::user()->id;
 
-        if(!$article->save()) {
+        if (!$article->save()) {
             return redirect("/");
         };
 
@@ -69,7 +74,7 @@ class ArticleController extends Controller {
         $articleContent->locale_id  = $request->locale_id;
 
 
-        if(!$articleContent->save()) {
+        if (!$articleContent->save()) {
             return redirect("/");
         }
 

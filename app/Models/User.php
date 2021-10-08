@@ -51,4 +51,15 @@ class User extends Authenticatable
     public function isAdmin(): bool {
         return $this->role_id === 60;
     }
+
+
+    /**
+     *
+     * Détermine si l'utilisateur est un étudiant
+     * @return bool
+     *
+     */
+    public function isEtudiant(): bool {
+        return $this->role_id === 20;
+    }
 }
