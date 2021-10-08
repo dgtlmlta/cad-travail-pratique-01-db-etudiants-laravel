@@ -33,9 +33,8 @@ Route::get('/etudiants/ajout', [EtudiantController::class, "create"])->name("etu
 Route::post('/etudiants/ajouter', [EtudiantController::class, "store"])->name("etudiants.store");
 
 
-// Formulaire de mise à jour d'un étudiant
+// Modifications d'un étudiant
 Route::get('/etudiants/{etudiant}/modifier', [EtudiantController::class, "edit"])->name("etudiants.edit");
-// Action d'ajout à la base de données
 Route::put('/etudiants/{etudiant}', [EtudiantController::class, "update"])->name("etudiants.update");
 
 
@@ -63,7 +62,14 @@ Route::middleware(['auth'])->group(function () {
     // Routes pour les articles
     Route::get("/articles", [ArticleController::class, "index"])->name("articles.index");
 
+    // Création d'articles
     Route::get("/articles/ajout", [ArticleController::class, "create"])->name("articles.create");
+    Route::post("/articles/ajouter", [ArticleController::class, "create"])->name("articles.store");
+
+    // Modifications d'article
+    Route::get("/articles/{article}/modifier", [ArticleController::class, "create"])->name("articles.edit");
+    Route::put("/articles/{article}", [ArticleController::class, "create"])->name("articles.update");
+
 
 
     // Routes pour les fichiers

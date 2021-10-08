@@ -17,4 +17,7 @@
         "logout"   => "logout",
         "city"     => "city",
         "save"     => "save",
+        "title"    => "title",
+        "body"     => "body",
+        "language" => "language",
     ];

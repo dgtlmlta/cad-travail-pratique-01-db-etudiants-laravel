@@ -8,10 +8,8 @@ use Illuminate\View\Component;
 
 class Etudiant extends Component
 {
-    public $action;
     public $villes;
     public $routeName;
-    public $method;
     public $etudiant;
 
     /**
@@ -23,8 +21,8 @@ class Etudiant extends Component
     {
         //
         $this->routeName = Route::currentRouteName();
-        $this->villes = Ville::all();
-        $this->etudiant = $etudiant;
+        $this->villes    = Ville::all();
+        $this->etudiant  = $etudiant;
     }
 
     /**
@@ -47,7 +45,7 @@ class Etudiant extends Component
     public function actionRoute() {
         $actionsMapping = [
             "etudiants.create" => route("etudiants.store"),
-            "etudiants.edit" => route("etudiants.update", [
+            "etudiants.edit"   => route("etudiants.update", [
                 "etudiant" => $this->etudiant->id ?? 0
             ])
         ];

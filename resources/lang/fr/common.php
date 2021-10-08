@@ -16,4 +16,7 @@
         "logout"   => "déconnexion",
         "city"     => "ville",
         "save"     => "enregistrer",
+        "title"    => "titre",
+        "body"     => "contenu",
+        "language" => "langue",
     ];
