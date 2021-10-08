@@ -10,6 +10,6 @@
             </dd>
         </div>
     @empty
-
+        <span>{{ __("articles/index.noPostsMessage") }}</span>
     @endforelse
 </dl>
