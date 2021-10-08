@@ -1,3 +1,12 @@
-<div>
-    <!-- Life is available only in the present moment. - Thich Nhat Hanh -->
-</div>
+<dl>
+    @forelse ($articles as $article)
+        <div>
+            <dt>{{  }}</dt>
+            <dd>
+
+            </dd>
+        </div>
+    @empty
+
+    @endforelse
+</dl>

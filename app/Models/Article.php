@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Article extends Model
 {
     use HasFactory;
+
+    public function content($locale) {
+        return $this->hasMany(ArticleContent::class)->where("locale_id", $locale);
+    }
 }
