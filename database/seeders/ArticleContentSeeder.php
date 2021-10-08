@@ -33,6 +33,22 @@ class ArticleContentSeeder extends Seeder
                 "article_id" => 1,
                 "locale_id"  => "fr"
             ],
+            [
+                "title" => "MongoDB: A Beginner’s Guide",
+                "body"  => "In the worlds of JavaScript and Node.js, MongoDB has established itself as the go-to database. It is the ‘M’ in the popular MEAN and MERN stacks, and it is generally considered to be more flexible and easier-to-scale than traditional database technologies like MySQL.
+
+                But setting a database for the first time can be tricky. When I first experimented with MongoDB, I encountered several frustrating obstacles that made the process much harder than it should have been. In writing this article, I hope you can avoid my mistakes.",
+                "article_id" => 2,
+                "locale_id"  => "en"
+            ],
+            [
+                "title" => "MongoDB pour les débutants",
+                "body"  => "Dans les mondes de JavaScript et Node.js, MongoDB s'est imposé comme la base de données incontournable. C'est le « M » dans les piles MEAN et MERN populaires, et il est généralement considéré comme plus flexible et plus facile à mettre à l'échelle que les technologies de base de données traditionnelles comme MySQL.
+
+                Mais définir une base de données pour la première fois peut être délicat. Lorsque j'ai expérimenté MongoDB pour la première fois, j'ai rencontré plusieurs obstacles frustrants qui ont rendu le processus beaucoup plus difficile qu'il n'aurait dû l'être. En écrivant cet article, j'espère que vous pourrez éviter mes erreurs.",
+                "article_id" => 2,
+                "locale_id"  => "fr"
+            ],
 
         ];
 

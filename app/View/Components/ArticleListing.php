@@ -3,11 +3,12 @@
 namespace App\View\Components;
 
 use App\Models\Article;
+use Illuminate\Support\Facades\App;
 use Illuminate\View\Component;
 
 class ArticleListing extends Component
 {
-    public array $articles = Article::all();
+    public $articles;
 
     /**
      * Create a new component instance.
@@ -17,6 +18,7 @@ class ArticleListing extends Component
     public function __construct()
     {
         //
+        $this->articles = Article::with("localizedContent")->get();
     }
 
     /**
