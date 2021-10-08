@@ -1,6 +1,7 @@
 <?php
 
 return [
-    "pageTitle"   => "Nos articles",
-    "headerTitle" => "Nos plus récents articles",
+    "pageTitle"        => "Student's posts",
+    "headerTitle"      => "Our latest posts",
+    "addArticleButton" => "Write a post",
 ];
