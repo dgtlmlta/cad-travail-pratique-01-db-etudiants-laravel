@@ -69,9 +69,12 @@ Route::middleware(['auth'])->group(function () {
     // Affichage d'un article
     Route::get("/articles/{article}", [ArticleController::class, "show"])->name("articles.show");
 
+    // Suppression d'un article
+    Route::delete("/articles/{article}", [ArticleController::class, "destroy"])->name("articles.destroy");
+
     // Modifications d'article
-    Route::get("/articles/{article}/modifier", [ArticleController::class, "create"])->name("articles.edit");
-    Route::put("/articles/{article}", [ArticleController::class, "create"])->name("articles.update");
+    Route::get("/articles/{article}/modifier", [ArticleController::class, "edit"])->name("articles.edit");
+    Route::put("/articles/{article}", [ArticleController::class, "update"])->name("articles.update");
 
 
 
