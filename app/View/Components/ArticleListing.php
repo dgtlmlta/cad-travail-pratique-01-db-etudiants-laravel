@@ -17,8 +17,10 @@ class ArticleListing extends Component
      */
     public function __construct()
     {
-        //
-        $this->articles = Article::with("localizedContent")->get();
+        // Filtrer les articles afin d'obtenir que ceux qui ont une version de la locale courante
+        $this->articles = Article::whereHas("localizedContent")
+                                    ->with("localizedContent")
+                                    ->get();
     }
 
     /**

@@ -12,7 +12,7 @@ class Article extends Model
 
     public function localizedContent() {
         return $this->hasOne(ArticleContent::class)
-            ->where("locale_id", App::getLocale());
+                    ->where("locale_id", App::getLocale());
     }
 
     public function author() {
