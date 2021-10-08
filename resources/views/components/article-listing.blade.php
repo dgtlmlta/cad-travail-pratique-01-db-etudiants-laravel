@@ -1,9 +1,9 @@
 <dl>
     @forelse ($articles as $article)
-        <div>
+        <div class="mb-4">
             <dt>{{ $article->localizedContent->title}}</dt>
             <dd>
-                {{ $article->localizedContent->body }}
+                {{ Str::words($article->localizedContent->body, 20, "...") }}
             </dd>
         </div>
     @empty

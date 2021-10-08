@@ -1,5 +1,5 @@
 <x-layouts.mainframe :pageTitle="$etudiant->user->name">
-    <h1>{{ $etudiant->nom }}</h1>
+    <h1>{{ $etudiant->user->name }}</h1>
 
     <dl>
         <div>
