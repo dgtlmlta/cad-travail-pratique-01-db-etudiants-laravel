@@ -5,8 +5,11 @@
     <a class="nav-item nav-link @if (Route::is('etudiants.index'))active @endif"
        href="/etudiants">{{ __('navigation.students') }}</a>
 
-    <a class="nav-item nav-link @if (Route::is('forum.index'))active @endif"
+    <a class="nav-item nav-link @if (Route::is('articles.index'))active @endif"
        href="/articles">{{ __('navigation.posts') }}</a>
+
+    <a class="nav-item nav-link @if (Route::is('files.index'))active @endif"
+       href="/files">{{ __('navigation.files') }}</a>
 
     @auth
         <div class="nav-item dropdown dropdown-user">
