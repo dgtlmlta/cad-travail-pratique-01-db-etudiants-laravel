@@ -62,7 +62,7 @@ class ArticlePolicy
     {
         // Seulement l'auteur de l'article peut le modifier
         if($user->id !== $article->etudiant_id) {
-            return $this->deny("Seulement les étudiants peuvent publier des articles");
+            return $this->deny("Seulement l'auteur de l'article peut modifier le modifier");
         };
 
         return true;

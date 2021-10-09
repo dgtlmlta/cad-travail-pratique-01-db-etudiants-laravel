@@ -18,15 +18,15 @@
     </article>
 
     @canany(['update', 'delete'], $article)
-        <div class="actions">
+        <div class="actions d-flex justify-content-between align-items-center">
             @can('update', $article)
-                <a href="/articles/{{ $article->id }}/modifier">Modifier l'article</a>
+                <a class="btn btn-primary"
+                   href="/articles/{{ $article->id }}/modifier">{{ ucfirst(__('articles/show.updateButton')) }}</a>
             @endcan
 
             @can('delete', $article)
                 <form action="{{ route('articles.destroy', $article->id) }}"
-                      method="POST"
-                      class="mt-3">
+                      method="POST">
                     @csrf
                     @method('delete')
                     <button class="btn btn-danger"

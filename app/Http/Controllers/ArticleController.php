@@ -88,7 +88,11 @@ class ArticleController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function show(Article $article) {
-        //
+        // Rediriger vers l'index si l'article n'existe pas dans la locale courante
+        if(!$article->localizedContent) {
+            return redirect("/articles");
+        }
+
         return view("articles.show", [
             "article" => $article,
         ]);
@@ -102,6 +106,9 @@ class ArticleController extends Controller {
      */
     public function edit(Article $article) {
         //
+        return view("articles.edit", [
+            "article" => $article
+        ]);
     }
 
     /**
