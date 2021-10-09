@@ -26,13 +26,14 @@
                   name="body">{{ ((old("title") !== null) ?
                                     old("title") :
                                     (($article !== null) ?
-                                        $article->localizedContent->title :
+                                        $article->localizedContent->body :
                                         "")) }}</textarea>
         @if ($errors->has('body'))
             <span class="text-danger">{{ $errors->first('body') }}</span>
         @endif
     </div>
 
+    @if(Route::is("articles.create"))
     <div class="form-group">
         <label for="selectLocale">{{ ucfirst(__('common.language')) }} :</label>
         <select class="form-control"
@@ -52,6 +53,7 @@
             <span class="text-danger">{{ $errors->first('locale_id') }}</span>
         @endif
     </div>
+    @endif
 
     <div class="form-group">
         <button class="btn btn-primary"

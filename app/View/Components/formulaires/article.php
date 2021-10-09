@@ -2,6 +2,7 @@
 
 namespace App\View\Components\Formulaires;
 
+use App\Models\Article as ModelsArticle;
 use Illuminate\Support\Facades\Route;
 use Illuminate\View\Component;
 
@@ -9,7 +10,7 @@ class Article extends Component
 {
     public array $locales;
     public string $routeName;
-    public Article|null $article;
+    public ModelsArticle|null $article;
 
     /**
      * Create a new component instance.

@@ -3,11 +3,11 @@
 namespace App\View\Components;
 
 use App\Models\Article;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Facades\App;
 use Illuminate\View\Component;
 
-class ArticleListing extends Component
-{
+class ArticleListing extends Component {
     public $articles;
 
     /**
@@ -15,12 +15,14 @@ class ArticleListing extends Component
      *
      * @return void
      */
-    public function __construct()
-    {
+    public function __construct() {
         // Filtrer les articles afin d'obtenir que ceux qui ont une version de la locale courante
-        $this->articles = Article::whereHas("localizedContent")
-                                    ->with(["localizedContent", "author.user"])
-                                    ->get();
+        $this->articles =
+            Article::whereHas("content", function (Builder $query) {
+                $query->where("locale_id", App::getLocale());
+            })
+            ->with(["content", "author.user"])
+            ->get();
     }
 
     /**
@@ -28,8 +30,7 @@ class ArticleListing extends Component
      *
      * @return \Illuminate\Contracts\View\View|\Closure|string
      */
-    public function render()
-    {
+    public function render() {
         return view('components.article-listing');
     }
 }

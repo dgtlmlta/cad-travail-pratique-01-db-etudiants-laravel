@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Article;
 use App\Models\ArticleContent;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -107,7 +108,8 @@ class ArticleController extends Controller {
     public function edit(Article $article) {
         //
         return view("articles.edit", [
-            "article" => $article
+            "article" => $article,
+            "pageTitle" => __("articles/edit.pageTitle"),
         ]);
     }
 
@@ -120,6 +122,34 @@ class ArticleController extends Controller {
      */
     public function update(Request $request, Article $article) {
         //
+        $validation = $request->validate([
+            "title" => [
+                "required"
+            ],
+            "body" => [
+                "required"
+            ],
+            "locale_id" => [
+                "required",
+                "exists:locales,abbreviation"
+            ]
+        ]);
+
+        $articleContent = ArticleContent::whereHas("content", function(Builder $query) {
+            $query;
+        });
+
+        $articleContent->article_id = $article->id;
+        $articleContent->title      = $request->title;
+        $articleContent->body       = $request->body;
+        $articleContent->locale_id  = $request->locale_id;
+
+
+        if (!$articleContent->save()) {
+            return redirect("/");
+        }
+
+        return redirect("/articles/{$article->id}");
     }
 
     /**

@@ -14,6 +14,10 @@ class Article extends Model {
             ->where("locale_id", App::getLocale());
     }
 
+    public function content() {
+        return $this->hasOne(ArticleContent::class);
+    }
+
     public function author() {
         return $this->belongsTo(Etudiant::class, "etudiant_id");
     }

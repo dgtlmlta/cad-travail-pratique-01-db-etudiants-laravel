@@ -1,6 +1,6 @@
 <?php
 
 return [
-    "pageTitle" => "update a post",
-    "headerTitle" => "update your post",
+    "pageTitle" => "Update a post",
+    "headerTitle" => "Update your post",
 ];

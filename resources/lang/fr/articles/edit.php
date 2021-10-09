@@ -1,6 +1,6 @@
 <?php
 
 return [
-    "pageTitle" => "modifier un article",
-    "headerTitle" => "modifier votre article",
+    "pageTitle" => "Modifier un article",
+    "headerTitle" => "Modifier votre article",
 ];
