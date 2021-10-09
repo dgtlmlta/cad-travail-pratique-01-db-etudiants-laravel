@@ -16,8 +16,8 @@ class CreateArticleContentsTable extends Migration
     {
         Schema::create('article_contents', function (Blueprint $table) {
             $table->id();
-            $table->foreignId("article_id")->constrained();
-            $table->foreignIdFor(Locale::class, "locale_id");
+            $table->foreignId("article_id")->constrained()->onDelete("cascade");
+            $table->foreignIdFor(Locale::class, "locale_id")->onDelete("cascade");
             $table->string("title");
             $table->text("body");
             $table->timestamps();

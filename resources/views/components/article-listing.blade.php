@@ -1,6 +1,6 @@
 <dl>
     @forelse ($articles as $article)
-        {{-- {{ dd($article->content) }} --}}
+        {{ dump($article->localizedContent) }}
         <div class="mb-4">
             <dt><a href="/articles/{{ $article->id }}">{{ $article->localizedContent->title}}</a></dt>
 
