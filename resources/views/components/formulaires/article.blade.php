@@ -23,8 +23,8 @@
         <label for="inputBody">{{ ucfirst(__('common.body')) }} :</label>
         <textarea class="form-control"
                   id="inputBody"
-                  name="body">{{ ((old("title") !== null) ?
-                                    old("title") :
+                  name="body">{{ ((old("body") !== null) ?
+                                    old("body") :
                                     (($article !== null) ?
                                         $article->localizedContent->body :
                                         "")) }}</textarea>

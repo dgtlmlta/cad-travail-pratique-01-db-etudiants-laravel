@@ -10,12 +10,11 @@ class Article extends Model {
     use HasFactory;
 
     public function localizedContent() {
-        return $this->hasOne(ArticleContent::class)
-            ->where("locale_id", App::getLocale());
+        return $this->hasOne(ArticleContent::class);
     }
 
-    public function content() {
-        return $this->hasOne(ArticleContent::class);
+    public function contents() {
+        return $this->hasMany(ArticleContent::class);
     }
 
     public function author() {

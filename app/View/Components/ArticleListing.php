@@ -18,10 +18,10 @@ class ArticleListing extends Component {
     public function __construct() {
         // Filtrer les articles afin d'obtenir que ceux qui ont une version de la locale courante
         $this->articles =
-            Article::whereHas("content", function (Builder $query) {
+            Article::whereHas("localizedContent", function (Builder $query) {
                 $query->where("locale_id", App::getLocale());
             })
-            ->with(["content", "author.user"])
+            ->with(["localizedContent", "author.user"])
             ->get();
     }
 

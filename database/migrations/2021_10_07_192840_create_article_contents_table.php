@@ -15,13 +15,14 @@ class CreateArticleContentsTable extends Migration
     public function up()
     {
         Schema::create('article_contents', function (Blueprint $table) {
+            $table->id();
             $table->foreignId("article_id")->constrained();
             $table->foreignIdFor(Locale::class, "locale_id");
             $table->string("title");
             $table->text("body");
             $table->timestamps();
 
-            $table->primary(["article_id", "locale_id"], "article_locale_pk");
+            $table->unique(["article_id", "locale_id"], "article_locale_uq");
         });
     }
 

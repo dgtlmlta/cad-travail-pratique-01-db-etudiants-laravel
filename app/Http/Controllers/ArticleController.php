@@ -6,6 +6,7 @@ use App\Models\Article;
 use App\Models\ArticleContent;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Auth;
 
 class ArticleController extends Controller {
@@ -129,21 +130,15 @@ class ArticleController extends Controller {
             "body" => [
                 "required"
             ],
-            "locale_id" => [
-                "required",
-                "exists:locales,abbreviation"
-            ]
         ]);
 
-        $articleContent = ArticleContent::whereHas("content", function(Builder $query) {
-            $query;
-        });
+        $articleContent = $article->contents
+                                  ->where("locale_id", App::getLocale())
+                                  ->where("article_id", $article->id)
+                                  ->first();
 
-        $articleContent->article_id = $article->id;
         $articleContent->title      = $request->title;
         $articleContent->body       = $request->body;
-        $articleContent->locale_id  = $request->locale_id;
-
 
         if (!$articleContent->save()) {
             return redirect("/");
