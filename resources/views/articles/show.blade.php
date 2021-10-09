@@ -4,12 +4,7 @@
         <small>{{ $article->author->user->name }}</small>
 
         <div class="post-content mt-4">
-            @foreach (explode(
-        "
-                         \n",
-                         $article->localizedContent->body,
-                )
-                as $paragraph)
+            @foreach (explode("\n", $article->localizedContent->body) as $paragraph)
                 @if (strlen($paragraph) > 0)
                     <p>{{ $paragraph }}</p>
                 @endif
