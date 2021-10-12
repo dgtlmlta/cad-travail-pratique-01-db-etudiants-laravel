@@ -4,9 +4,15 @@ namespace App\Http\Controllers;
 
 use App\Models\File;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class FileController extends Controller
 {
+    public function __construct() {
+        // Permettre de filtrer automatiquement les requêtes à l'aide d'FilePolicy
+        $this->authorizeResource(File::class, 'file');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -15,6 +21,9 @@ class FileController extends Controller
     public function index()
     {
         //
+        return view("files.index", [
+            "pageTitle" => __("files/index.pageTitle")
+        ]);
     }
 
     /**
@@ -25,6 +34,9 @@ class FileController extends Controller
     public function create()
     {
         //
+        return view("files.create", [
+            "pageTitle" => __("files/create.pageTitle")
+        ]);
     }
 
     /**
@@ -36,6 +48,30 @@ class FileController extends Controller
     public function store(Request $request)
     {
         //
+        $validation = $request->validate([
+            "title" => [
+                "required"
+            ],
+            "file" => [
+                "required",
+                "mimes:pdf,doc,zip"
+            ],
+        ]);
+
+        // Récupérer le chemin du fichier téléversé
+        $fileUrl = $request->file("file")->store("etudiants-uploads");
+
+        $file = new File();
+
+        $file->title       = $request->title;
+        $file->url         = $fileUrl;
+        $file->etudiant_id = Auth::user()->id;
+
+        if (!$file->save()) {
+            return redirect("/");
+        };
+
+        return redirect("/files/{$file->id}");
     }
 
     /**
@@ -47,6 +83,9 @@ class FileController extends Controller
     public function show(File $file)
     {
         //
+        return view("files.show", [
+            "file" => $file,
+        ]);
     }
 
     /**
