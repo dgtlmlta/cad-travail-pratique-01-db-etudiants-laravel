@@ -10,7 +10,7 @@ class File extends Component
 {
     public array $locales;
     public string $routeName;
-    public ModelsFile $file;
+    public ModelsFile|null $file;
 
     /**
      * Create a new component instance.
