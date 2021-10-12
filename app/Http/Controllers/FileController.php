@@ -70,7 +70,7 @@ class FileController extends Controller {
             return redirect("/");
         };
 
-        return redirect("/files/{$file->id}");
+        return redirect("/files");
     }
 
     /**
@@ -109,7 +109,31 @@ class FileController extends Controller {
      */
     public function update(Request $request, File $file) {
         //
+        $validation = $request->validate([
+            "title" => [
+                "required"
+            ],
+            "fileUpload" => [
+                "mimes:pdf,doc,docx,zip"
+            ],
+        ]);
 
+        $file->title = $request->title;
+
+        if(isset($request->fileUpload)) {
+            // Si un nouveau fichier est téléversé, détruire le précédent
+            Storage::delete($file->url);
+
+            // Généré le nouveau fichier
+            $fileUrl = Storage::put("etudiants-uploads", $request->fileUpload);
+            $file->url = $fileUrl;
+        };
+
+        if (!$file->save()) {
+            return redirect("/");
+        };
+
+        return redirect("/files");
     }
 
     /**
