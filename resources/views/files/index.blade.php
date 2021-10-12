@@ -1,4 +1,4 @@
-<x-layouts.mainframe>
+<x-layouts.mainframe :pageTitle="$pageTitle">
     <h1>{{ __("files/index.headerTitle") }}</h1>
 
     @can('create', App\Models\File::class)

@@ -1,3 +1,20 @@
-<div>
-    <!-- The best way to take care of the future is to take care of the present moment. - Thich Nhat Hanh -->
-</div>
+<dl>
+    @forelse ($files as $file)
+        <div class="mb-4">
+            <dt>
+                <picture>
+                    <img src="{{ $previewImgUrl }}"
+                         alt="">
+                </picture>
+            </dt>
+
+            <small>{{ $file->author->user->name }}</small>
+
+            <dd>
+                <a href="{{ $file->url }}">{{ $file->title }}</a>
+            </dd>
+        </div>
+    @empty
+        <span>{{ __('files/index.noFileMessage') }}</span>
+    @endforelse
+</dl>
