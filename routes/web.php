@@ -4,6 +4,7 @@ use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EtudiantController;
+use App\Http\Controllers\FileController;
 use App\Http\Controllers\LocaleController;
 
 /*
@@ -79,6 +80,23 @@ Route::middleware(['auth'])->group(function () {
 
 
     // Routes pour les fichiers
+
+    // Liste des fichiers
+    Route::get('/files', [FileController::class, "index"])->name("files.index");
+
+    // Création de fichiers
+    Route::get("/files/ajout", [FileController::class, "create"])->name("files.create");
+    Route::post("/files/ajouter", [FileController::class, "store"])->name("files.store");
+
+    // Affichage d'un fichier
+    Route::get("/files/{file}", [FileController::class, "show"])->name("files.show");
+
+    // Suppression d'un fichier
+    Route::delete("files/{file}", [FileController::class, "destroy"])->name("files.destroy");
+
+    // Modifications de fichier
+    Route::get("/files/{file}/modifier", [FileController::class, "edit"])->name("files.edit");
+    Route::put("/files/{file}", [FileController::class, "update"])->name("files.update");
 });
 
 
