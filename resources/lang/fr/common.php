@@ -19,4 +19,5 @@
         "title"    => "titre",
         "body"     => "contenu",
         "language" => "langue",
+        "file"     => "fichier",
     ];

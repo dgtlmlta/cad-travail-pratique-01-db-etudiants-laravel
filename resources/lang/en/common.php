@@ -20,4 +20,5 @@
         "title"    => "title",
         "body"     => "body",
         "language" => "language",
+        "file"     => "file",
     ];
