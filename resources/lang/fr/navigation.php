@@ -4,7 +4,7 @@
         "home"      => "Accueil",
         "students"  => "Nos étudiants",
         "posts"     => "Articles",
-        "files"     => "Fichier",
+        "files"     => "Fichiers",
         "login"     => "S'authentifier",
         "logout"    => "Déconnexion",
         "greeting"  => "Salut"
