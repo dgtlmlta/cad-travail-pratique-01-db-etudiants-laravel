@@ -3,15 +3,13 @@
         <div class="mb-4">
             <dt>
                 <picture>
-                    <img src="{{ $previewImgUrl }}"
+                    <img src="{{ $previewImgUrl(Storage::mimeType($file->url)) }}"
                          alt="">
                 </picture>
             </dt>
 
-            <small>{{ $file->author->user->name }}</small>
-
             <dd>
-                <a href="{{ $file->url }}">{{ $file->title }}</a>
+                <a href="/files/{{ $file->id }}">{{ $file->title }}</a>
             </dd>
         </div>
     @empty
