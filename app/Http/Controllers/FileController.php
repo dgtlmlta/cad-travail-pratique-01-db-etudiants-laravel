@@ -10,7 +10,7 @@ use Illuminate\Support\Str;
 
 class FileController extends Controller {
     public function __construct() {
-        // Permettre de filtrer automatiquement les requêtes à l'aide d'FilePolicy
+        // Permettre de filtrer automatiquement les requêtes à l'aide de FilePolicy
         $this->authorizeResource(File::class, 'file');
     }
 
@@ -94,6 +94,10 @@ class FileController extends Controller {
      */
     public function edit(File $file) {
         //
+        return view("files.edit", [
+            "file"      => $file,
+            "pageTitle" => __("files/edit.pageTitle")
+        ]);
     }
 
     /**
@@ -105,6 +109,7 @@ class FileController extends Controller {
      */
     public function update(Request $request, File $file) {
         //
+
     }
 
     /**
@@ -115,5 +120,6 @@ class FileController extends Controller {
      */
     public function destroy(File $file) {
         //
+
     }
 }
