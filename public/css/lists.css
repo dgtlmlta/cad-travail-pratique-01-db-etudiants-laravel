@@ -1,0 +1,8 @@
+.file-listing {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150, 1fr));
+}
+
+.file-listing img {
+    max-width: 200px;
+}

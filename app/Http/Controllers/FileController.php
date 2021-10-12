@@ -44,7 +44,6 @@ class FileController extends Controller {
      */
     public function store(Request $request) {
 
-        dd($request);
         //
         $validation = $request->validate([
             "title" => [
@@ -57,7 +56,7 @@ class FileController extends Controller {
         ]);
 
         // Récupérer le chemin du fichier téléversé
-        $fileUrl = $request->file("file")->store("etudiants-uploads");
+        $fileUrl = $request->file("fileUpload")->store("etudiants-uploads");
 
         $file = new File();
 
