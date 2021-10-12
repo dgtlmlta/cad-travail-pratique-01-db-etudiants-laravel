@@ -3,10 +3,11 @@
 namespace App\View\Components;
 
 use App\Models\File;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\View\Component;
 
 class FileListing extends Component {
-    public array $files;
+    public Collection $files;
 
     /**
      * Create a new component instance.
