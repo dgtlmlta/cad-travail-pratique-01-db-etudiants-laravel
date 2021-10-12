@@ -92,7 +92,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get("/files/{file}", [FileController::class, "show"])->name("files.show");
 
     // Suppression d'un fichier
-    Route::delete("files/{file}", [FileController::class, "destroy"])->name("files.destroy");
+    Route::delete("/files/{file}", [FileController::class, "destroy"])->name("files.destroy");
 
     // Modifications de fichier
     Route::get("/files/{file}/modifier", [FileController::class, "edit"])->name("files.edit");

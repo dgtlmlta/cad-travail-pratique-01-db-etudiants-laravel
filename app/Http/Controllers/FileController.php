@@ -143,7 +143,11 @@ class FileController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function destroy(File $file) {
-        //
+        // Supprimer le fichier du filesystem
+        Storage::delete($file->url);
 
+        $file->delete();
+
+        return redirect("/files");
     }
 }
