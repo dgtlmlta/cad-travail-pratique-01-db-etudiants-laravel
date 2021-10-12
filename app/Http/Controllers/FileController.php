@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\File;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 
 class FileController extends Controller {
     public function __construct() {
@@ -78,10 +80,10 @@ class FileController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function show(File $file) {
-        //
-        return view("files.show", [
-            "file" => $file,
-        ]);
+        // Récupérer l'extension à partir du fichier
+        $extension = pathinfo(Storage::path($file->url), PATHINFO_EXTENSION);
+
+        return Storage::download($file->url, Str::slug($file->title) . "." . $extension);
     }
 
     /**
