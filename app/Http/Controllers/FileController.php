@@ -6,8 +6,7 @@ use App\Models\File;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class FileController extends Controller
-{
+class FileController extends Controller {
     public function __construct() {
         // Permettre de filtrer automatiquement les requêtes à l'aide d'FilePolicy
         $this->authorizeResource(File::class, 'file');
@@ -18,8 +17,7 @@ class FileController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
+    public function index() {
         //
         return view("files.index", [
             "pageTitle" => __("files/index.pageTitle")
@@ -31,8 +29,7 @@ class FileController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
+    public function create() {
         //
         return view("files.create", [
             "pageTitle" => __("files/create.pageTitle")
@@ -45,14 +42,15 @@ class FileController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
+    public function store(Request $request) {
+
+        dd($request);
         //
         $validation = $request->validate([
             "title" => [
                 "required"
             ],
-            "file" => [
+            "fileUpload" => [
                 "required",
                 "mimes:pdf,doc,zip"
             ],
@@ -80,8 +78,7 @@ class FileController extends Controller
      * @param  \App\Models\File  $file
      * @return \Illuminate\Http\Response
      */
-    public function show(File $file)
-    {
+    public function show(File $file) {
         //
         return view("files.show", [
             "file" => $file,
@@ -94,8 +91,7 @@ class FileController extends Controller
      * @param  \App\Models\File  $file
      * @return \Illuminate\Http\Response
      */
-    public function edit(File $file)
-    {
+    public function edit(File $file) {
         //
     }
 
@@ -106,8 +102,7 @@ class FileController extends Controller
      * @param  \App\Models\File  $file
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, File $file)
-    {
+    public function update(Request $request, File $file) {
         //
     }
 
@@ -117,8 +112,7 @@ class FileController extends Controller
      * @param  \App\Models\File  $file
      * @return \Illuminate\Http\Response
      */
-    public function destroy(File $file)
-    {
+    public function destroy(File $file) {
         //
     }
 }

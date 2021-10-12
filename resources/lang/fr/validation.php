@@ -159,5 +159,6 @@ return [
         'username'              => 'nom d\'utilisateur',
         'year'                  => 'année',
         "locale_id"             => "langue",
+        "fileUpload"            => "fichier",
     ],
 ];

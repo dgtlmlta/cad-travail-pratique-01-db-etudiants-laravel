@@ -1,5 +1,6 @@
 <form action="{{ $actionRoute }}"
-      method="POST">
+      method="POST"
+      enctype="multipart/form-data">
     @csrf
     @method($method)
 
@@ -21,8 +22,8 @@
                type="file"
                name="fileUpload"
                id="inputFileUpload">
-        @if ($errors->has('body'))
-            <span class="text-danger">{{ $errors->first('body') }}</span>
+        @if ($errors->has('fileUpload'))
+            <span class="text-danger">{{ $errors->first('fileUpload') }}</span>
         @endif
     </div>
 
