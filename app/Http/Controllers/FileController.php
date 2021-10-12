@@ -51,7 +51,7 @@ class FileController extends Controller {
             ],
             "fileUpload" => [
                 "required",
-                "mimes:pdf,doc,zip"
+                "mimes:pdf,doc,docx,zip"
             ],
         ]);
 

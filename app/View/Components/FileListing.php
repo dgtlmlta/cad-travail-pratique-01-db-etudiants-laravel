@@ -30,9 +30,10 @@ class FileListing extends Component {
 
     public function previewImgUrl($mimeType) {
         $urlMapping = [
-            "application/pdf" => asset("assets/img/PDF_file_icon.svg"),
-            "application/msword" => asset("assets/img/docx_icon.svg"),
-            "application/zip" => asset("assets/img/docx_icon.svg"),
+            "application/pdf"                                                         => asset("assets/img/PDF_file_icon.svg"),
+            "application/msword"                                                      => asset("assets/img/docx_icon.svg"),
+            "application/vnd.openxmlformats-officedocument.wordprocessingml.document" => asset("assets/img/docx_icon.svg"),
+            "application/zip"                                                         => asset("assets/img/zip_icon.svg"),
         ];
 
         return $urlMapping[$mimeType];

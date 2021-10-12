@@ -1,6 +1,13 @@
 .file-listing {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.file-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .file-listing img {

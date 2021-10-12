@@ -1,6 +1,6 @@
 <dl class="file-listing">
     @forelse ($files as $file)
-        <div>
+        <div class="file-item">
             <dt>
                 <picture>
                     <img src="{{ $previewImgUrl(Storage::mimeType($file->url)) }}"
